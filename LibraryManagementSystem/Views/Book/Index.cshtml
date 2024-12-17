@@ -29,6 +29,12 @@
     .books {
         width: 1.8rem;
     }
+
+    .btn {
+        height: 38px;
+    }
+
+
 </style>
 
 @if (TempData["SuccessMessage"] != null)
@@ -52,20 +58,24 @@
 
                 @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
                 {
-                    <a asp-controller="Book" asp-action="Add" class="btn btn-primary rounded ml-auto">
-                        <i class="fas fa-circle-plus m-0"></i>
-                    </a>
+                    <div class="ml-auto">
+                        <a asp-controller="Book" asp-action="Add" class="btn btn-primary rounded ml-auto">
+                            <i class="fas fa-circle-plus m-0"></i>
+                        </a>
+                    </div>
                 }
                 else
                 {
                     <div class="ml-auto"></div>
                 }
 
-                <button id="filterToggle" class="btn rounded ml-2 border-0">
-                    <i class="fa-solid fa-sliders" style="color: #f8f9fc;"></i>
-                </button>
+                <div class="ml-2">
+                    <a id="filterToggle" class="btn rounded border-0">
+                        <i class="fa-solid fa-sliders" style="color: #f8f9fc;"></i>
+                    </a>
+                </div>
 
-                <div class="my-auto ml-2">
+                <div class="ml-2">
                     <a href="@Url.Action("Index")" class="btn btn-secondary">
                         <i class="fa-solid fa-arrows-rotate" style="color: #ffffff;"></i>
                     </a>

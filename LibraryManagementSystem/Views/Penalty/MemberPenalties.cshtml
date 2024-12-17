@@ -1,0 +1,218 @@
+﻿@model PenaltiesPagerViewModel
+
+@{
+    ViewData["Title"] = "Index";
+    ViewData["Controller"] = "Penalty";
+    ViewData["Action"] = "Index";
+    Pager pager = new Pager();
+    ViewBag.Filter = Model.Filter;
+
+    int pageNo = 0;
+
+    if (Model.PagerSearchViewModel.Pager != null)
+    {
+        pager = Model.PagerSearchViewModel.Pager;
+        pageNo = pager.CurrentPage;
+    }
+}
+
+<head>
+    <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/site.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        .members-icon {
+            width: 2.2rem
+        }
+
+        .fa-circle-xmark {
+            font-size: 20px
+        }
+
+        .cancel-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: red;
+            color: white;
+            padding: 9px 12px;
+            border: none;
+            border-radius: 5px;
+            width: fit-content;
+        }
+
+        .cancel-btn:hover {
+            text-decoration: none;
+            color: white
+        }
+
+        .fa-circle-xmark {
+            font-size: 20px;
+            margin: 0;
+        }
+
+        .custom-table {
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body id="page-top">
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <partial name="_SuccessAlert" model="@TempData["SuccessMessage"]" />
+    }
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+                <!-- Begin Page Content -->
+                <!-- DataTales Example -->
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3 d-flex">
+                        <div class="d-flex">
+                            <i class="fa-solid fa-calendar-check mr-3 my-auto" style="color: #4e73df"></i>                            <h4 class="m-0 font-weight-bold text-primary pt-auto mt-auto mb-1">
+                                Membere Penalties
+                            </h4>
+                        </div>
+
+                        <button id="filterToggle" class="btn rounded ml-auto border-0">
+                            <i class="fa-solid fa-sliders" style="color: #f8f9fc;"></i>
+                        </button>
+
+                        <div class="my-auto ml-2">
+                            <a href="@Url.Action("MemberPenalties")" class="btn btn-secondary">
+                                <i class="fa-solid fa-arrows-rotate" style="color: #ffffff;"></i>
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="card-body">
+                        <div id="filterSection" class="collapse">
+                            <partial name="_PenaltiesFilter" model="@Model" />
+                        </div>
+
+
+                        <div class="table-container mb-4">
+                            <table class="custom-table" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Type</th>
+                                        <th>Amount</th>
+                                        <th>Paid</th>
+                                        <th>Book</th>
+                                        <th>BorrowDate</th>
+                                        <th>DueDate</th>
+                                        <th>ReturnDate</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var penalty in Model.Penalties)
+                                    {
+                                        <tr>
+                                            <td>@penalty.Id</td>
+                                            <td>@penalty.PenaltyType</td>
+                                            <td>$@penalty.PenaltyAmount</td>
+                                            <td class="text-center">
+                                                @if (penalty.PaidStatus)
+                                                {
+                                                    <i class="fas fa-circle-check text-success" title="Paid"></i>
+                                                }
+                                                else
+                                                {
+                                                    <i class="fas fa-circle-xmark text-danger" title="Not Paid"></i>
+                                                }
+                                            </td>
+                                            <td>@penalty.MemberName</td>
+                                            <td>@penalty.BookName</td>
+                                            <td>@penalty.BorrowDate.ToString("MM/dd/yyyy")</td>
+                                            <td>@penalty.DueDate.ToString("MM/dd/yyyy")</td>
+                                            <td>@penalty.ReturnDate?.ToString("MM/dd/yyyy")</td>
+
+                                            <td class="d-flex align-content-center">
+                                                <div class="d-flex justify-content-center">
+                                                    <a asp-action="Edit" asp-route-id="@penalty.Id">
+                                                        <i class="fas fa-pen-to-square text-lg edit-button my-auto mr-4"></i>
+                                                    </a>
+                                                </div>
+                                                <div class="d-flex justify-content-center">
+                                                    <a asp-action="Delete" asp-route-id="@penalty.Id" class="text-danger text-lg ms-1" title="Delete"><i class="fas fa-trash"></i></a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <partial name="_ReservationsPager" model="@Model.PagerSearchViewModel" />
+                    </div>
+                </div>
+            </div>
+            <!-- End of Main Content -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <script>
+        window.onload = function () {
+            const alert = document.getElementById('successAlert');
+            if (alert) {
+                alert.classList.add('show');
+
+                setTimeout(() => {
+                    alert.classList.remove('show');
+                    alert.classList.add('fade');
+                }, 3000);
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const filterToggle = document.getElementById('filterToggle');
+            const filterSection = document.getElementById('filterSection');
+
+            // Store filter section state in session storage
+            const isFilterOpen = sessionStorage.getItem('isFilterOpen') === 'true';
+
+            // Only show filter section if explicitly opened by user
+            if (isFilterOpen) {
+                filterSection.classList.add('show');
+                filterToggle.classList.add('active');
+            }
+
+            filterToggle.addEventListener('click', function () {
+                const isNowOpen = filterSection.classList.toggle('show');
+                this.classList.toggle('active');
+                // Store the current state
+                sessionStorage.setItem('isFilterOpen', isNowOpen);
+            });
+
+            // Clear filter section state when applying new filters
+            const filterForm = document.querySelector('form[action="/Reservation/Index"]');
+            if (filterForm) {
+                filterForm.addEventListener('submit', function () {
+                    sessionStorage.setItem('isFilterOpen', 'true');
+                });
+            }
+        });
+    </script>
+</body>

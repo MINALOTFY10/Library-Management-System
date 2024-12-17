@@ -226,6 +226,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVuYWx0eVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/Penalty/MemberPenalties.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVuYWx0eVxNZW1iZXJQZW5hbHRpZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/Penalty/_PenaltiesFilter.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVuYWx0eVxfUGVuYWx0aWVzRmlsdGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/Reservation/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXRpb25cRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

@@ -34,7 +34,13 @@
             font-size: 26px
         }
 
+        .btn {
+            height: 38px;
+        }
 
+        .custom-table {
+            pointer-events: none;
+        }
     </style>
 </head>
 
@@ -64,12 +70,15 @@
                             </h4>
                         </div>
 
-                        <button id="filterToggle" class="btn rounded ml-auto border-0">
-                            <i class="fa-solid fa-sliders" style="color: #f8f9fc;"></i>
-                        </button>
+                        <div class="ml-auto">
+                            <a id="filterToggle" class="btn rounded border-0">
+                                <i class="fa-solid fa-sliders" style="color: #f8f9fc;"></i>
+                            </a>
+                        </div>
+                        
 
-                        <div class="my-auto ml-2">
-                            <a href="@Url.Action("Index")" class="btn btn-secondary">
+                        <div class="ml-2">
+                            <a href="@Url.Action("Index")" class="btn btn-secondary my-auto">
                                 <i class="fa-solid fa-arrows-rotate" style="color: #ffffff;"></i>
                             </a>
                         </div>

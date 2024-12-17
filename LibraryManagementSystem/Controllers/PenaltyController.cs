@@ -1,6 +1,7 @@
 ﻿using LibraryManagementSystem.Models;
 using LibraryManagementSystem.Repositories;
 using LibraryManagementSystem.ViewModel.Penalties;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
@@ -10,13 +11,15 @@ namespace LibraryManagementSystem.Controllers
         IBookRepository _BookRepository,
         IGenericRepository<BookCopy> _BookCopyRepository,
         IGenericRepository<Member> _MemberRepsitory,
-        IPenaltyRepository _PenaltyRepository) : Controller
+        IPenaltyRepository _PenaltyRepository,
+        UserManager<Member> _UserManager) : Controller
     {
         // Dependency injection of repositories and UserManager for accessing data and user information
         private readonly IBookRepository BookRepository = _BookRepository;
         private readonly IGenericRepository<BookCopy> BookCopyRepository = _BookCopyRepository;
         private readonly IGenericRepository<Member> MemberRepository = _MemberRepsitory;
         private readonly IPenaltyRepository PenaltyRepository = _PenaltyRepository;
+        private readonly UserManager<Member> UserManager = _UserManager;
 
         // Displays the list of penalties with pagination and filtering
         public IActionResult Index(PenaltyFilterViewModel filter, int pg = 1)
@@ -51,7 +54,7 @@ namespace LibraryManagementSystem.Controllers
                     penalty.Id.ToString().Contains(filter.SearchQuery, StringComparison.OrdinalIgnoreCase) ||
                     (MemberRepository.GetById(penalty.MemberId).FirstName ?? "").Contains(filter.SearchQuery, StringComparison.OrdinalIgnoreCase) ||
                     (MemberRepository.GetById(penalty.MemberId).LastName ?? "").Contains(filter.SearchQuery, StringComparison.OrdinalIgnoreCase) ||
-                    BookRepository.GetBookDetailsById(BookCopyRepository.GetById(penalty.Id).BookId).Title.Contains(filter.SearchQuery, StringComparison.OrdinalIgnoreCase)
+                    (BookRepository.GetBookDetailsById(BookCopyRepository.GetById(penalty.Id).BookId))!.Title.Contains(filter.SearchQuery, StringComparison.OrdinalIgnoreCase)
                 );
             }
 
@@ -61,7 +64,7 @@ namespace LibraryManagementSystem.Controllers
             // Apply sorting based on user selection
             query = ApplySorting(query, filter.SortBy, filter.SortOrder);
 
-            return query.ToList();
+            return [.. query];
         }
 
         // Method to apply data filters (Penalty, Borrow, due, return dates)
@@ -191,9 +194,25 @@ namespace LibraryManagementSystem.Controllers
             return selectList;
         }
 
-        public IActionResult MemeberPenalties()
+        public IActionResult MemberPenalties(PenaltyFilterViewModel filter, int pg = 1)
         {
-            return View();
+            const int pageSize = 8; // Define page size
+            if (pg < 1) pg = 1;
+
+            // Retrieve penalties of specific user and apply filtering
+            var userId = UserManager.GetUserId(User);
+            var PenaltyData = PenaltyRepository.GetPenaltiesByMemberId(userId);
+            var penalties = FilterPenalties(filter, PenaltyData);
+
+            // Setup pagination
+            var pager = new Pager(penalties.Count, pg, pageSize);
+            int recSkip = (pg - 1) * pageSize;
+            List<Penalty> paginatedPenalties = penalties.Skip(recSkip).Take(pager.PageSize).ToList();
+
+            // Create a view model to pass to the view.
+            var PenaltiesPagerViewModel = CreatePenaltyViewModels(paginatedPenalties, filter, pager);
+
+            return View("MemberPenalties", PenaltiesPagerViewModel);
         }
     }
 }

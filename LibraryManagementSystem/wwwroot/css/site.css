@@ -1,50 +1,63 @@
 html {
-    font-size: 14px;
+    font-size: 16px;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
     .sidebar {
-        width: 9.5rem !important;
         display: flex;
         justify-content: center;
-        align-content: center
+        align-content: center;
     }
 
     .sidebar-dark .nav-item .nav-link {
-        width: 9.5rem !important;
         display: flex !important;
         flex-direction: row;
-        justify-content: center;
+        justify-content: start;
         align-content: center;
     }
 
     .sidebar-dark .nav-item .nav-link i {
         margin: 0 20px !important;
     }
+
+    .sidebar-dark .nav-item {
+        width: 14rem;
+        text-align: start
+    }
 }
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 9rem !important;
+    }
+
+    .sidebar .nav-item .nav-link {
+        width: 9rem !important;
+    }
+}
+
 
 .sidebar.toggled .nav-item .nav-link i {
     margin: 0 20px !important;
 }
 
+.sidebar.toggled .nav-item .nav-link {
+    display: flex !important;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center;
+    align-items: center;
+    width: 9.5rem !important;
+}
+
+.sidebar.toggled .nav-item .nav-link p {
+    display: block; /* Forces the <p> to be on a new line */
+    margin-top: 5px; /* Optional: adds spacing between the <i> and <p> */
+}
+
 .sidebar.toggled {
     overflow: visible;
-    width: 8.5rem !important;
+    width: 9.5rem !important;
 }
-
-@media (min-width: 768px) {
-    html {
-        font-size: 16px;
-    }
-
-    .sidebar-dark .nav-item {
-        width: fit-content;
-    }
-    .sidebar.toggled .nav-item .nav-link {
-        width: 8.5rem !important;
-    }
-}
-
 
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {

@@ -584,3 +584,4 @@ D:\Courses\.NET DEPI\07 - Projects\LibraryManagementSystem\LibraryManagementSyst
 D:\Courses\.NET DEPI\07 - Projects\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\net8.0\LibraryManagementSystem.pdb
 D:\Courses\.NET DEPI\07 - Projects\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\net8.0\LibraryManagementSystem.genruntimeconfig.cache
 D:\Courses\.NET DEPI\07 - Projects\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\net8.0\ref\LibraryManagementSystem.dll
+D:\Courses\.NET DEPI\07 - Projects\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\net8.0\LibraryManagementSystem.sourcelink.json
