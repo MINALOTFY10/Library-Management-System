@@ -4,26 +4,22 @@ The **Library Management System** is designed to help libraries efficiently mana
 
 This system is built with the goal of simplifying library operations, enhancing user experience, and ensuring smooth book tracking and management.
 
----
+[Click here to watch the demo video](https://youtu.be/LIz7pvUHpk8)
+
 
 ## Table of Contents
 
 - [Project Overview](#project-overview)
-- [Demo Video](#demo-video)
 - [Project Features](#project-features)
 - [Technologies Used](#technologies-used)
 - [System Design](#system-design)
 - [Installation Instructions](#installation-instructions)
 
+---
 
 ## Overview
 
 This system is built with **ASP.NET Core MVC**, **Entity Framework Core**, and **ASP.NET Identity**. The project is built using a Code-First approach, incorporating best practices like the Repository Pattern and Dependency Injection for a clean and maintainable architecture.
-
----
-
-## Demo Video
-[Click here to watch the demo video](https://youtu.be/LIz7pvUHpk8)
 
 ---
 
