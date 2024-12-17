@@ -4,7 +4,7 @@ The **Library Management System** is designed to help libraries efficiently mana
 
 This system is built with the goal of simplifying library operations, enhancing user experience, and ensuring smooth book tracking and management.
 
-[Click here to watch the demo video](https://youtu.be/LIz7pvUHpk8)
+[Watch the demo video](https://youtu.be/LIz7pvUHpk8)
 
 
 ## Table of Contents
