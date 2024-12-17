@@ -1,0 +1,55 @@
+﻿@model BookGenresViewModel
+
+@{
+    ViewData["Title"] = "Edit Book Details";
+    SelectList genreOptions = new SelectList(Model.Genres, "Id", "Name", Model.GenreId);
+}
+
+<head>
+    <link rel="stylesheet" href="/css/site.css">
+
+    <style>
+        .bttn-primary, .bttn-gray {
+            height: 50px;
+            width: 180px
+        }
+    </style>
+</head>
+
+<div class="container mt-5">
+
+    <div class="text-center mb-4">
+        <h2>📝 Edit Book Details</h2>
+        <p>Update the details for the selected book</p>
+    </div>
+
+    <div class="card form-card mx-auto mb-5" style="max-width: 800px;">
+        <div class="form-header">Edit Book</div>
+        <div class="card-body bg-white px-4 py-4">
+
+            <form method="post" asp-action="SaveEdit" asp-controller="Book" asp-route-id="@Model.Id">
+                <!-- From Validation -->
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+
+                <!-- Book Form -->
+                <partial name="~/Views/Book/_BookForm.cshtml" model="@Model" />
+
+                <!-- Buttons -->
+                <div class="text-center mt-4 d-flex justify-content-center gap-2 flex-wrap">
+                    <button type="submit" class="bttn-primary" onclick="return confirmEdit();">
+                        <i class="fas fa-save me-2"></i> Save Changes
+                    </button>
+                    <button asp-action="Index" class="bttn-gray">
+                        <i class="fas fa-arrow-left me-2"></i> Back to List
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    function confirmEdit() {
+        return confirm('Are you sure you want to save changes to this book?');
+    }
+</script>

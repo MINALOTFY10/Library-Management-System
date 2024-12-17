@@ -1,0 +1,83 @@
+﻿<form method="get" asp-action="Index" asp-controller="Member" class="mb-4">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="form-group">
+                <label>Search</label>
+                <input type="text" name="SearchQuery" class="form-control"
+                       value="@Model.Filter.SearchQuery" placeholder="Name, or ID...">
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-group">
+                <label>Membership Type</label>
+                <select name="MembershipType" class="form-control" asp-items="Model.MembershipSelectList">
+                </select>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-group">
+                <label>Activity</label>
+                <select name="IsActive" class="form-control">
+                    <option value="">All</option>
+                    <option value="true" selected="@(Model.Filter.IsActive == true)">Active</option>
+                    <option value="false" selected="@(Model.Filter.IsActive == false)">Not Active</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <label>Sort By</label>
+                <div class="input-group">
+                    <select name="SortBy" class="form-control">
+                        <option value="name" selected="@(Model.Filter.SortBy == "name")">Name</option>
+                        <option value="totalBorrowedBooks" selected="@(Model.Filter.SortBy == "totalBorrowedBooks")">No. of Borrowed Books</option>
+                        <option value="joiningdate" selected="@(Model.Filter.SortBy == "joiningdate")">Joining Date</option>
+                    </select>
+                    <select name="SortOrder" class="form-control">
+                        <option value="asc" selected="@(Model.Filter.SortOrder == "asc")">Ascending</option>
+                        <option value="desc" selected="@(Model.Filter.SortOrder == "desc")">Descending</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <label>Start of Membership</label>
+                <input type="date" name="MembershipFrom" class="form-control"
+                       value="@(Model.Filter.MembershipFrom?.ToString("yyyy-MM-dd"))">
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <label>End of Membership</label>
+                <input type="date" name="MembershipTo" class="form-control"
+                       value="@(Model.Filter.MembershipTo?.ToString("yyyy-MM-dd"))">
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <label>Expiration From</label>
+                <input type="date" name="ExpirationFrom" class="form-control"
+                       value="@(Model.Filter.ExpirationFrom?.ToString("yyyy-MM-dd"))">
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <label>Expiration To</label>
+                <input type="date" name="ExpirationTo" class="form-control"
+                       value="@(Model.Filter.ExpirationTo?.ToString("yyyy-MM-dd"))">
+            </div>
+        </div>
+        <div class="col-md-6 d-flex mx-auto mt-3 justify-content-center">
+            <div class="my-auto mx-0">
+                <button type="submit" class="btn submit_button">
+                    <i class="fas fa-magnifying-glass mr-1"></i>
+                    Search
+                </button>
+            </div>
+        </div>
+
+    </div>
+    <div class="row mt-3">
+    </div>
+</form>

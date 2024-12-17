@@ -1,0 +1,145 @@
+﻿@model List<int>
+
+@{
+    ViewData["Title"] = "Home Page";
+
+    var membersDataJson = System.Text.Json.JsonSerializer.Serialize(Model);
+}
+
+<html lang="en">
+<head>
+    <!-- Custom styles for this template -->
+    <link href="/css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/site.css">
+
+    <!-- Example for Font Awesome v6 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .container-fluid {
+            padding-right: 10px !important;
+            padding-left: 10px !important;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Bar Chart -->
+    <div class="card shadow mb-4">
+        <!-- Card Header - Dropdown -->
+        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+            <h6 class="m-0 font-weight-bold text-primary">New Members</h6>
+        </div>
+        <!-- Card Body -->
+        <div class="card-body">
+            <div class="chart-bar">
+                <canvas id="myBarChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="~/vendor/jquery/jquery.min.js"></script>
+    <script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="~/js/sb-admin-2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        var membersValuesData = @Html.Raw(membersDataJson);
+
+
+        // New Members (Bar Chart)
+        var ctx = document.getElementById("myBarChart").getContext("2d");
+        var myBarChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+                datasets: [{
+                    label: "New Members",
+                    backgroundColor: [
+                        "#4e73df", "#1cc88a", "#36b9cc", "#f6993f",
+                        "#e74a3b", "#858796", "#5a5c69", "#20c9a6",
+                        "#b856d4", "#f6993f", "#fd5e53", "#828282"
+                    ],
+                    hoverBackgroundColor: [
+                        "#2e59d9", "#17a673", "#2c9faf", "#f4b619",
+                        "#e02d2b", "#6c757d", "#434750", "#18a68d",
+                        "#9b4bb7", "#f58a26", "#e8493f", "#686868"
+                    ],
+                    borderColor: "#4e73df",
+                    data: membersValuesData,
+                }],
+            },
+            options: {
+                maintainAspectRatio: false,
+                layout: {
+                    padding: {
+                        left: 10,
+                        right: 25,
+                        top: 25,
+                        bottom: 0
+                    }
+                },
+                scales: {
+                    x: {
+                        grid: {
+                            display: false,
+                            drawBorder: false
+                        },
+                        ticks: {
+                            maxTicksLimit: 12,
+                        },
+                        // Adjust the spacing between bars
+                        barPercentage: 0.6, // Bar width as a percentage of the category width (default is 0.9)
+                        categoryPercentage: 0.8 // Space between categories (default is 0.8)
+                    },
+                    y: {
+                        grid: {
+                            color: "rgb(234, 236, 244)",
+                            zeroLineColor: "rgb(234, 236, 244)",
+                            drawBorder: false,
+                            borderDash: [2],
+                            zeroLineBorderDash: [2]
+                        },
+                        ticks: {
+                            maxTicksLimit: 5,
+                            padding: 10,
+                            // Include a dollar sign in the ticks
+                            callback: function (value, index, values) {
+                                return value;
+                            }
+                        },
+                    },
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        backgroundColor: "rgb(0,0,0)",
+                        bodyColor: "#858796",
+                        titleMarginBottom: 10,
+                        titleFont: {
+                            size: 14
+                        },
+                        borderColor: '#dddfeb',
+                        borderWidth: 1,
+                        padding: 15,
+                        displayColors: false,
+                        caretPadding: 10,
+                        callbacks: {
+                            label: function (tooltipItem) {
+                                return tooltipItem.raw;
+                            }
+                        }
+                    },
+                },
+            }
+        });
+    </script>
+</body>
+</html>
+
+

@@ -1,0 +1,55 @@
+﻿@model Book
+
+<!-- Title -->
+<div class="col-12">
+    <h4 class="text-primary font-weight-bold">Title</h4>
+    <p class="text-secondary">@Model.Title</p>
+</div>
+
+<!-- Author -->
+<div class="col-md-6">
+    <h4 class="text-primary font-weight-bold">Author</h4>
+    <p class="text-secondary">@Model.Author</p>
+</div>
+
+<!-- ISBN -->
+<div class="col-md-6">
+    <h4 class="text-primary font-weight-bold">ISBN</h4>
+    <p class="text-secondary">@Model.ISBN</p>
+</div>
+
+<!-- Publisher -->
+<div class="col-md-6">
+    <h4 class="text-primary font-weight-bold">Publisher</h4>
+    <p class="text-secondary">@Model.Publisher</p>
+</div>
+
+<!-- Published Date -->
+<div class="col-md-6">
+    <h4 class="text-primary font-weight-bold">Published Date</h4>
+    <p class="text-secondary">@Model.PublishedDate</p>
+</div>
+
+<!-- Language -->
+<div class="col-md-6">
+    <h4 class="text-primary font-weight-bold">Language</h4>
+    <p class="text-secondary">@Model.Language</p>
+</div>
+
+<!-- Added Date -->
+<div class="col-md-6">
+    <h4 class="text-primary font-weight-bold">Added Date</h4>
+    <p class="text-secondary">@Model.AddedDate</p>
+</div>
+
+<!-- Total Borrow Count -->
+<div class="col-md-6">
+    <h4 class="text-primary font-weight-bold">Total Borrow Count</h4>
+    <p class="text-secondary">@Model.TotalBorrowCount</p>
+</div>
+
+<!-- Genre -->
+<div class="col-md-6">
+    <h4 class="text-primary font-weight-bold">Genre</h4>
+    <p class="text-secondary">@Model.Genre.Name</p>
+</div>

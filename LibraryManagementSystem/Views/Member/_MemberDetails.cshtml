@@ -1,0 +1,41 @@
+﻿<!-- ID -->
+<div class="col-12">
+    <h4 class="text-primary font-weight-bold">ID</h4>
+    <p class="text-secondary">@Model.Id.Split('-')[0]</p>
+</div>
+
+<!-- Name -->
+<div class="col-md-6">
+    <h4 class="text-primary font-weight-bold">Name</h4>
+    <p class="text-secondary">@Model.FirstName @Model.LastName</p>
+</div>
+
+<!-- Email -->
+<div class="col-md-6">
+    <h4 class="text-primary font-weight-bold">Email</h4>
+    <p class="text-secondary">@Model.Email</p>
+</div>
+
+<!-- PhoneNumber -->
+<div class="col-md-6">
+    <h4 class="text-primary font-weight-bold">Phone</h4>
+    <p class="text-secondary">@Model.PhoneNumber</p>
+</div>
+
+<!-- Membership Tier -->
+<div class="col-md-6">
+    <h4 class="text-primary font-weight-bold">Membership Tier</h4>
+    <p class="text-secondary">@Model.MembershipType</p>
+</div>
+
+<!-- Membership Date -->
+<div class="col-md-6">
+    <h4 class="text-primary font-weight-bold">Date of Joining</h4>
+    <p class="text-secondary">@Model.DateOfMembership.ToString("dd/MM/yyyy")</p>
+</div>
+
+<!-- Expiration Date -->
+<div class="col-md-6">
+    <h4 class="text-primary font-weight-bold">Expires On</h4>
+    <p class="text-secondary">@Model.ExpirationDate.ToString("dd/MM/yyyy")</p>
+</div>

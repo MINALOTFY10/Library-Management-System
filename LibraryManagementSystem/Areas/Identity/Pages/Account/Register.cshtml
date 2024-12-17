@@ -1,0 +1,175 @@
+﻿@page
+@model RegisterModel
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<style>
+    body {
+        background-color: #f0f5ff !important;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .register-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 110vh;
+    }
+
+    .register-box {
+        background: #fff;
+        border-radius: 25px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        width: 450px;
+        text-align: center;
+    }
+
+    .register-header {
+        margin-bottom: 20px;
+    }
+
+    .register-header h2 {
+        font-size: 24px;
+        margin: 10px 0 5px;
+        color: black;
+        font-weight: 600;
+    }
+
+    .register-header p {
+        font-size: 14px;
+        color: #888;
+    }
+
+    .register-form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .form-floating label {
+        font-size: 14px;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        padding: 10px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+
+    .external-login-section {
+        margin-top: 20px;
+        font-size: 14px;
+    }
+
+    .external-login-section p {
+        margin-bottom: 15px;
+    }
+
+    .fa-book {
+        color: #0B8ADD;
+        font-size: 2.1rem
+    }
+
+    .login-link {
+        color: #0B8ADD;
+        font-weight: 600
+    }
+
+    #registerSubmit {
+        border-radius: 25px;
+        padding: 10px 0;
+        font-weight: 600;
+        font-size: 1.1rem
+    }
+</style>
+
+<!-- Custom fonts for this template-->
+<link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+<!-- Custom styles for this template-->
+<link href="/css/sb-admin-2.min.css" rel="stylesheet">
+
+<div class="register-container">
+    <div class="register-box">
+        <div class="register-header">
+            <div class="d-flex justify-content-center mb-2">
+                <div class="sidebar-brand-icon rotate-n-15 mr-3 my-auto">
+                    <i class="fas fa-book"></i>
+                </div>
+                <h2 class="mt-0">BookNest</h2>
+            </div>
+            <p>Your Library System</p>
+        </div>
+        <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="register-form">
+            <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+            <div class="form-floating mb-3">
+                <input asp-for="Input.FirstName" class="form-control" autocomplete="FirstName" placeholder="First Name" />
+                <label asp-for="Input.FirstName">First Name</label>
+                <span asp-validation-for="Input.FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-floating mb-3">
+                <input asp-for="Input.LastName" class="form-control" autocomplete="LastName" placeholder="Last Name" />
+                <label asp-for="Input.LastName">Last Name</label>
+                <span asp-validation-for="Input.LastName" class="text-danger"></span>
+            </div>
+            <div class="form-floating mb-3">
+                <input asp-for="Input.Email" class="form-control" autocomplete="username" placeholder="Email" />
+                <label asp-for="Input.Email">Email</label>
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </div>
+            <div class="form-floating mb-3">
+                <input asp-for="Input.Password" class="form-control" autocomplete="new-password" placeholder="Password" />
+                <label asp-for="Input.Password">Password</label>
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </div>
+            <div class="form-floating mb-3">
+                <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" placeholder="Confirm Password" />
+                <label asp-for="Input.ConfirmPassword">Confirm Password</label>
+                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+            </div>
+            <div class="form-floating mb-3">
+                <input asp-for="Input.PhoneNumber" class="form-control" autocomplete="phonenumber" placeholder="Phone Number" />
+                <label asp-for="Input.PhoneNumber">Phone Number</label>
+                <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+            </div>
+            <button id="registerSubmit" type="submit" class="btn btn-primary">Register</button>
+        </form>
+
+        <div class="external-login-section d-flex justify-content-center">
+            <p>Already have an Account? </p>
+            <a class="login-link p-0 m-0 ml-2" asp-area="Identity" asp-page="/Account/Login">Login</a>
+        </div>
+
+        
+        @* <div class="external-login-section">
+            <p>Or register using:</p>
+            @if ((Model.ExternalLogins?.Count ?? 0) > 0)
+            {
+                <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                    @foreach (var provider in Model.ExternalLogins!)
+                    {
+                        <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name">
+                            @provider.DisplayName
+                        </button>
+                    }
+                </form>
+            }
+        </div> *@
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

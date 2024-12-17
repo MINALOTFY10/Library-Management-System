@@ -1,0 +1,369 @@
+﻿@model BorrowedBookPagerViewModel
+@using Microsoft.AspNetCore.Identity
+@using LibraryManagementSystem.Models
+@inject SignInManager<Member> SignInManager
+
+@{
+    ViewData["Title"] = "Index";
+    ViewData["Controller"] = "Book";
+    ViewData["Action"] = "Index";
+    Pager pager = new Pager();
+    ViewBag.Filter = Model.Filter;
+
+    int pageNo = 0;
+
+    if (Model.PagerSearchViewModel.Pager != null)
+    {
+        pager = Model.PagerSearchViewModel.Pager;
+        pageNo = pager.CurrentPage;
+    }
+}
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>BookNest</title>
+
+    <!-- Custom fonts for this template -->
+    <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/site.css">
+
+    <!-- Custom styles for this page -->
+    <link href="/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+    <!-- Example for Font Awesome v6 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<style>
+    .img-small {
+        color: #4e73df !important
+    }
+
+    .books {
+        width: 1.8rem
+    }
+
+    .book-title {
+        color: #1f2937
+    }
+
+    /* Styling for the toggle switch */
+    .form-switch {
+        padding: 0;
+        margin: 0
+    }
+
+    .toggle-switch {
+        width: 52px !important;
+        height: 26px;
+        position: relative;
+        appearance: none;
+        outline: none;
+        background: #ccc;
+        border-radius: 11px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        border: 2px solid #ddd;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .toggle-switch:checked {
+        background: linear-gradient(90deg, #007bff, #00aaff);
+        border-color: transparent;
+    }
+
+    .toggle-switch::before {
+        content: '';
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        background: white;
+        border-radius: 50%;
+        top: 2px;
+        left: 2px;
+        transition: transform 0.3s ease;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .toggle-switch:checked::before {
+        transform: translateX(27px);
+    }
+
+    .form-check-input {
+        margin-top: 30px;
+    }
+</style>
+
+<body id="page-top">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+        
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Begin Page Content -->
+                <!-- DataTales Example -->
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3 d-flex flex-column">
+                        <div class="d-flex w-100">
+                            @if (SignInManager.IsSignedIn(User) && User.IsInRole("Client"))
+                            {
+                                    <h4 class="m-0 font-weight-bold text-primary d-flex my-auto ml-2">
+                                    <i class="fas fa-fw fa-book-reader my-auto mr-3"></i>
+                                    Borrowed Books
+                                    </h4>
+                            }
+                            else
+                            {
+                                    <h4 class="m-0 font-weight-bold text-primary d-flex my-auto ml-1">
+                                        <svg aria-hidden="true" data-prefix="fas" data-icon="books" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="svg-inline--fa fa-books fa-w-18 fa-7x books mr-2">
+                                            <path fill="currentColor" d="M575.11 443.25L461.51 19.06C458.2 6.7 445.61-3.18 430.15.96L414.7 5.1c-6.18 1.66-11.53 6.4-16.06 14.24-14.03 6.94-52.3 17.21-68 18.22-7.84-4.53-14.85-5.96-21.03-4.3l-15.46 4.14c-2.42.65-4.2 1.95-6.15 3.08V32c0-17.67-14.33-32-32-32h-64c-17.67 0-32 14.33-32 32v64h128l101.66 396.94c3.31 12.36 15.9 22.24 31.36 18.1l15.45-4.14c6.18-1.66 11.53-6.4 16.06-14.24 13.91-6.88 52.18-17.2 68-18.22 7.84 4.53 14.85 5.96 21.03 4.3l15.46-4.14c15.45-4.14 21.41-18.99 18.09-31.35zm-134.4-7.06L348.64 92.37l61.82-16.56 92.07 343.82-61.82 16.56zM0 384h128V128H0v256zM96 0H32C14.33 0 0 14.33 0 32v64h128V32c0-17.67-14.33-32-32-32zM0 480c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-64H0v64zm160-96h128V128H160v256zm0 96c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-64H160v64z" class="mr-4"></path>
+                                        </svg>
+                                        Books Management
+                                    </h4>
+                            }
+
+                            @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+                            {
+                                    <a asp-controller="Book" asp-action="Add" class="btn btn-primary rounded ml-auto">
+                                        <i class="fas fa-circle-plus m-0"></i>
+                                    </a>
+                            }
+                            else
+                            {
+                                    <div class="ml-auto"></div>
+                            }
+
+                            <button id="filterToggle" class="btn rounded ml-2 border-0">
+                                <i class="fa-solid fa-sliders" style="color: #f8f9fc;"></i>
+                            </button>
+
+                            <div class="my-auto ml-2">
+                                <a href="@Url.Action("UserBorrowedBooks")" class="btn btn-secondary">
+                                    <i class="fa-solid fa-arrows-rotate" style="color: #ffffff;"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+                        <div id="filterSection" class="collapse">
+                            <form method="get" asp-action="UserBorrowedBooks" asp-controller="BorrowsCopies" class="mb-4">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>Search</label>
+                                            <input type="text" name="SearchQuery" class="form-control"
+                                                   value="@Model.Filter.SearchQuery" placeholder="Title, Author, or ISBN...">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>Genre</label>
+                                            <select name="GenreId" class="form-control">
+                                                <option value="0">All Genres</option>
+                                                @foreach (var genre in Model.Genres)
+                                                {
+                                                        <option value="@genre.Id" selected="@(genre.Id == Model.Filter.GenreId)">
+                                                        @genre.Name
+                                                        </option>
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-5">
+                                        <div class="form-group">
+                                            <label>Sort By</label>
+                                            <div class="input-group">
+                                                <select name="SortBy" class="form-control">
+                                                    <option value="title" selected="@(Model.Filter.SortBy == "title")">Title</option>
+                                                    <option value="author" selected="@(Model.Filter.SortBy == "author")">Author</option>
+                                                    <option value="borrowdate" selected="@(Model.Filter.SortBy == "borrowdate")">Borrowed Date</option>
+                                                    <option value="returndate" selected="@(Model.Filter.SortBy == "returndate")">Return Date</option>
+                                                    <option value="duedate" selected="@(Model.Filter.SortBy == "duedate")">Due Date</option>
+
+                                                </select>
+                                                <select name="SortOrder" class="form-control">
+                                                    <option value="asc" selected="@(Model.Filter.SortOrder == "asc")">Ascending</option>
+                                                    <option value="desc" selected="@(Model.Filter.SortOrder == "desc")">Descending</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>Borrowed From</label>
+                                            <input type="date" name="BorrowedFrom" class="form-control"
+                                                   value="@(Model.Filter.BorrowedFrom?.ToString("yyyy-MM-dd"))">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>Borrowed To</label>
+                                            <input type="date" name="BorrowedTo" class="form-control"
+                                                   value="@(Model.Filter.BorrowedTo?.ToString("yyyy-MM-dd"))">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>Returned From</label>
+                                            <input type="date" name="ReturnedFrom" class="form-control"
+                                                   value="@(Model.Filter.ReturnedFrom?.ToString("yyyy-MM-dd"))">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>Returned To</label>
+                                            <input type="date" name="ReturnedTo" class="form-control"
+                                                   value="@(Model.Filter.ReturnedTo?.ToString("yyyy-MM-dd"))">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>Due From</label>
+                                            <input type="date" name="DueFrom" class="form-control"
+                                                   value="@(Model.Filter.DueFrom?.ToString("yyyy-MM-dd"))">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>Due To</label>
+                                            <input type="date" name="DueTo" class="form-control"
+                                                   value="@(Model.Filter.DueTo?.ToString("yyyy-MM-dd"))">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 ml-3">
+                                        <div class="form-group">
+                                            <label for="IsReturned">Not Returned</label>
+                                            <div>
+                                                <input type="checkbox" class="toggle-switch" type="checkbox" id="IsReturnedSwitch" name="Filter.IsReturned" value="true"
+                                                   @(Model.Filter.IsReturned == true ? "checked" : "") />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 d-flex mx-auto mt-3 justify-content-center">
+                                        <div class="my-auto mx-0">
+                                            <button type="submit" class="btn submit_button">
+                                                <i class="fas fa-magnifying-glass mr-1"></i>
+                                                Search
+                                            </button>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div class="row mt-3">
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="table-container mb-4" id="booksTable">
+                            <table class="custom-table" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th>Title</th>
+                                        <th>Author</th>
+                                        <th>Genre</th>
+                                        <th>Borrow Date</th>
+                                        <th>Return Date</th>
+                                        <th>Due Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var book in Model.Books)
+                                    {
+                                            <tr onclick="location.href='@Url.Action("ShowDetails", "Book", new { id = book.Id })'" title="Details">
+                                                <td class="book-title">@book.Title</td>
+                                                <td>@book.Author</td>
+                                                <td>@book.Genre.Name</td>
+                                                <td>@book.BorrowedDate.ToString("MM/dd/yyyy")</td>
+                                                <td>@(book.ReturnedDate?.ToString("MM/dd/yyyy") ?? "N/A")</td>
+                                                <td>@book.DueDate.ToString("MM/dd/yyyy")</td>
+
+                                            </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <partial name="_UserBorrowedCopiesPager" model="@Model.PagerSearchViewModel" />
+                    </div>
+                </div>
+
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <script>
+        window.onload = function () {
+            const alert = document.getElementById('successAlert');
+            if (alert) {
+                alert.classList.add('show');
+
+                setTimeout(() => {
+                    alert.classList.remove('show');
+                    alert.classList.add('fade');
+                }, 3000);
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const filterToggle = document.getElementById('filterToggle');
+            const filterSection = document.getElementById('filterSection');
+
+            // Store filter section state in session storage
+            const isFilterOpen = sessionStorage.getItem('isFilterOpen') === 'true';
+
+            // Only show filter section if explicitly opened by user
+            if (isFilterOpen) {
+                filterSection.classList.add('show');
+                filterToggle.classList.add('active');
+            }
+
+            filterToggle.addEventListener('click', function () {
+                const isNowOpen = filterSection.classList.toggle('show');
+                this.classList.toggle('active');
+                // Store the current state
+                sessionStorage.setItem('isFilterOpen', isNowOpen);
+            });
+
+            // Clear filter section state when applying new filters
+            const filterForm = document.querySelector('form[action="/Member/Index"]');
+            if (filterForm) {
+                filterForm.addEventListener('submit', function () {
+                    sessionStorage.setItem('isFilterOpen', 'true');
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

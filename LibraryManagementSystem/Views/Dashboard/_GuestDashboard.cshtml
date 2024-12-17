@@ -1,0 +1,86 @@
+﻿
+
+@{
+    ViewData["Title"] = "Home Page";
+
+}
+
+<html lang="en">
+<head>
+    <!-- Custom styles for this template -->
+    <link href="/css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/site.css">
+
+    <!-- Example for Font Awesome v6 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .container-fluid {
+            padding-right: 10px !important;
+            padding-left: 10px !important;
+        }
+
+        .guest-description {
+            line-height: 28px
+        }
+
+        .register-link {
+            font-weight: 700;
+            text-decoration: none
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Content Row ( First 2 Graphs) -->
+    <div class="row">
+        <!-- Pie Chart -->
+        <div class="col-xl-6 col-lg-5">
+        </div>
+
+        <!-- Site Description -->
+        <div class="col-lg-12 mb-4">
+            <div class="card shadow">
+                <div class="card-body">
+                    <div class="text-center">
+                        <img class="img-fluid px-3 px-sm-4 mt-5 mb-5" style="width: 25rem;"
+                             src="img/undraw_posting_photo.svg" alt="Library Access Illustration">
+                    </div>
+                    <p class="guest-description">
+                        Access your library anytime, anywhere!
+                        <br /> BookNest allows you to explore extensive collections, track your borrowed items,
+                        and reserve books effortlessly from any device. Whether you are at home, at work, or on the go,
+                        BookNest ensures seamless access to your favorite reads. Dive into a world of knowledge and entertainment
+                        at your fingertips.
+                        <br /> Don’t have an account yet?  
+                        <a  asp-area="Identity" asp-page="/Account/Register" class="register-link">Register in here</a>
+                        to get started!
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="~/vendor/jquery/jquery.min.js"></script>
+    <script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="~/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="~/js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="~/vendor/chart.js/Chart.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+
+    </script>
+</body>
+</html>
+
+

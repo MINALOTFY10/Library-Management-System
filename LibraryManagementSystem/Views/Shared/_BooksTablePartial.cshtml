@@ -1,0 +1,53 @@
+﻿@model BooksPagerViewModel
+@using Microsoft.AspNetCore.Identity
+@using LibraryManagementSystem.Models
+@inject SignInManager<Member> SignInManager
+
+<table class="custom-table" id="dataTable" width="100%" cellspacing="0">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>ISBN</th>
+            <th>Genre</th>
+            <th>Language</th>
+            <th>Publisher</th>
+            <th>Pub. Date</th>
+            <th>Availability</th>
+            @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+            {
+                <th></th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var (book, isAvailable) in Model.books.Zip(Model.IsBookAvailable))
+        {
+            <tr onclick="location.href='@Url.Action("ShowDetails", new { id = book.Id })'" title="Details">
+                <td class="book-title">@book.Title</td>
+                <td>@book.Author</td>
+                <td>@book.ISBN</td>
+                <td>@book.Genre.Name</td>
+                <td>@book.Language</td>
+                <td>@book.Publisher</td>
+                <td>@book.PublishedDate.ToString("MM/dd/yyyy")</td>
+                <td class="text-center">
+                    @if (isAvailable)
+                    {
+                        <i class="fas fa-circle-check text-success" title="Available"></i>
+                    }
+                    else
+                    {
+                        <i class="fas fa-circle-xmark text-danger" title="Not Available"></i>
+                    }
+                </td>
+                @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+                {
+                    <td class="align-content-center">
+                        <a asp-action="Edit" asp-route-id="@book.Id" class="fas fa-pen-to-square text-lg edit-button"></a>
+                    </td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>

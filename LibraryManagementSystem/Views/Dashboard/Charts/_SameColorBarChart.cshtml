@@ -1,0 +1,132 @@
+﻿@model Dictionary<string, int>
+
+@{
+    ViewData["Title"] = "Home Page";
+
+    var booksLabels = Model.Keys.ToArray();
+    var booksLabelsJson = System.Text.Json.JsonSerializer.Serialize(booksLabels);
+
+    var booksValues = Model.Values.ToArray();
+    var booksValuesJson = System.Text.Json.JsonSerializer.Serialize(booksValues);
+}
+
+<html lang="en">
+<head>
+    <!-- Custom styles for this template -->
+    <link href="/css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/site.css">
+
+    <!-- Example for Font Awesome v6 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .container-fluid {
+            padding-right: 10px !important;
+            padding-left: 10px !important;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Most Borrowed Books Example -->
+    <div class="card shadow mb-4">
+        <!-- Card Header - Dropdown -->
+        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+            <h6 class="m-0 font-weight-bold text-primary">Top Borrowed Books</h6>
+        </div>
+        <!-- Card Body -->
+        <div class="card-body">
+            <div class="chart-bar">
+                <canvas id="bookBarChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="~/vendor/jquery/jquery.min.js"></script>
+    <script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="~/js/sb-admin-2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        var booksLablesData = @Html.Raw(booksLabelsJson);
+        var booksValuesData = @Html.Raw(booksValuesJson);
+
+        // Top Borrowed Books (Same Color Bar Chart)
+        var ctx = document.getElementById("bookBarChart").getContext("2d");
+        var bookBarChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: booksLablesData,
+                datasets: [{
+                    label: "No. of Borrowing",
+                    backgroundColor: "rgba(78, 115, 223, 1)",
+                    borderColor: "rgba(78, 115, 223, 1)",
+                    data: booksValuesData,
+                }],
+            },
+            options: {
+                maintainAspectRatio: false,
+                layout: {
+                    padding: {
+                        left: 10,
+                        right: 25,
+                        top: 25,
+                        bottom: 0
+                    }
+                },
+                scales: {
+                    x: {
+                        grid: {
+                            display: false,
+                            drawBorder: false
+                        },
+                        ticks: {
+                            maxTicksLimit: 10
+                        },
+                        maxBarThickness: 5,
+                    },
+                    y: {
+                        ticks: {
+                            beginAtZero: true,
+                            maxTicksLimit: 10,
+
+                            padding: 10,
+                            callback: function (value) {
+                                return value.toLocaleString();
+                            }
+                        },
+                        grid: {
+                            color: "rgba(234, 236, 244, 1)",
+                            zeroLineColor: "rgba(234, 236, 244, 1)",
+                            drawBorder: false,
+                            borderDash: [2],
+                            zeroLineBorderDash: [2]
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        backgroundColor: "rgb(255,255,255)",
+                        bodyColor: "#858796",
+                        titleMarginBottom: 10,
+                        titleColor: '#6e707e',
+                        titleFont: { size: 14 },
+                        borderColor: '#dddfeb',
+                        borderWidth: 1,
+                        displayColors: false,
+                        caretPadding: 10,
+                    },
+                },
+            }
+        });
+    </script>
+</body>
+</html>
+
+

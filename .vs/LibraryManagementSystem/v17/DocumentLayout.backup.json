@@ -1,0 +1,445 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Courses\\.NET DEPI\\07 - Projects\\LibraryManagementSystem\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B55D847D-B73D-4252-9818-07813E98B921}|LibraryManagementSystem\\LibraryManagementSystem.csproj|d:\\courses\\.net depi\\07 - projects\\librarymanagementsystem\\librarymanagementsystem\\controllers\\penaltycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B55D847D-B73D-4252-9818-07813E98B921}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\controllers\\penaltycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B55D847D-B73D-4252-9818-07813E98B921}|LibraryManagementSystem\\LibraryManagementSystem.csproj|d:\\courses\\.net depi\\07 - projects\\librarymanagementsystem\\librarymanagementsystem\\views\\dashboard\\_clientdashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B55D847D-B73D-4252-9818-07813E98B921}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\views\\dashboard\\_clientdashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B55D847D-B73D-4252-9818-07813E98B921}|LibraryManagementSystem\\LibraryManagementSystem.csproj|d:\\courses\\.net depi\\07 - projects\\librarymanagementsystem\\librarymanagementsystem\\views\\dashboard\\_admindashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B55D847D-B73D-4252-9818-07813E98B921}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\views\\dashboard\\_admindashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B55D847D-B73D-4252-9818-07813E98B921}|LibraryManagementSystem\\LibraryManagementSystem.csproj|d:\\courses\\.net depi\\07 - projects\\librarymanagementsystem\\librarymanagementsystem\\views\\shared\\_mainlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B55D847D-B73D-4252-9818-07813E98B921}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\views\\shared\\_mainlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B55D847D-B73D-4252-9818-07813E98B921}|LibraryManagementSystem\\LibraryManagementSystem.csproj|d:\\courses\\.net depi\\07 - projects\\librarymanagementsystem\\librarymanagementsystem\\views\\shared\\notfound.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B55D847D-B73D-4252-9818-07813E98B921}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\views\\shared\\notfound.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B55D847D-B73D-4252-9818-07813E98B921}|LibraryManagementSystem\\LibraryManagementSystem.csproj|d:\\courses\\.net depi\\07 - projects\\librarymanagementsystem\\librarymanagementsystem\\viewmodel\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B55D847D-B73D-4252-9818-07813E98B921}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\viewmodel\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B55D847D-B73D-4252-9818-07813E98B921}|LibraryManagementSystem\\LibraryManagementSystem.csproj|d:\\courses\\.net depi\\07 - projects\\librarymanagementsystem\\librarymanagementsystem\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B55D847D-B73D-4252-9818-07813E98B921}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B55D847D-B73D-4252-9818-07813E98B921}|LibraryManagementSystem\\LibraryManagementSystem.csproj|d:\\courses\\.net depi\\07 - projects\\librarymanagementsystem\\librarymanagementsystem\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B55D847D-B73D-4252-9818-07813E98B921}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B55D847D-B73D-4252-9818-07813E98B921}|LibraryManagementSystem\\LibraryManagementSystem.csproj|d:\\courses\\.net depi\\07 - projects\\librarymanagementsystem\\librarymanagementsystem\\globalusing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B55D847D-B73D-4252-9818-07813E98B921}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\globalusing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B55D847D-B73D-4252-9818-07813E98B921}|LibraryManagementSystem\\LibraryManagementSystem.csproj|d:\\courses\\.net depi\\07 - projects\\librarymanagementsystem\\librarymanagementsystem\\controllers\\reservationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B55D847D-B73D-4252-9818-07813E98B921}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\controllers\\reservationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B55D847D-B73D-4252-9818-07813E98B921}|LibraryManagementSystem\\LibraryManagementSystem.csproj|d:\\courses\\.net depi\\07 - projects\\librarymanagementsystem\\librarymanagementsystem\\controllers\\bookcopycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B55D847D-B73D-4252-9818-07813E98B921}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\controllers\\bookcopycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B55D847D-B73D-4252-9818-07813E98B921}|LibraryManagementSystem\\LibraryManagementSystem.csproj|d:\\courses\\.net depi\\07 - projects\\librarymanagementsystem\\librarymanagementsystem\\models\\bookcopy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B55D847D-B73D-4252-9818-07813E98B921}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\models\\bookcopy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B55D847D-B73D-4252-9818-07813E98B921}|LibraryManagementSystem\\LibraryManagementSystem.csproj|d:\\courses\\.net depi\\07 - projects\\librarymanagementsystem\\librarymanagementsystem\\repositories\\memberrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B55D847D-B73D-4252-9818-07813E98B921}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\repositories\\memberrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B55D847D-B73D-4252-9818-07813E98B921}|LibraryManagementSystem\\LibraryManagementSystem.csproj|d:\\courses\\.net depi\\07 - projects\\librarymanagementsystem\\librarymanagementsystem\\repositories\\ireservationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B55D847D-B73D-4252-9818-07813E98B921}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\repositories\\ireservationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B55D847D-B73D-4252-9818-07813E98B921}|LibraryManagementSystem\\LibraryManagementSystem.csproj|d:\\courses\\.net depi\\07 - projects\\librarymanagementsystem\\librarymanagementsystem\\repositories\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B55D847D-B73D-4252-9818-07813E98B921}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\repositories\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B55D847D-B73D-4252-9818-07813E98B921}|LibraryManagementSystem\\LibraryManagementSystem.csproj|d:\\courses\\.net depi\\07 - projects\\librarymanagementsystem\\librarymanagementsystem\\repositories\\iborrowscopyrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B55D847D-B73D-4252-9818-07813E98B921}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\repositories\\iborrowscopyrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B55D847D-B73D-4252-9818-07813E98B921}|LibraryManagementSystem\\LibraryManagementSystem.csproj|d:\\courses\\.net depi\\07 - projects\\librarymanagementsystem\\librarymanagementsystem\\repositories\\ibookrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B55D847D-B73D-4252-9818-07813E98B921}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\repositories\\ibookrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B55D847D-B73D-4252-9818-07813E98B921}|LibraryManagementSystem\\LibraryManagementSystem.csproj|d:\\courses\\.net depi\\07 - projects\\librarymanagementsystem\\librarymanagementsystem\\repositories\\ibookcopyrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B55D847D-B73D-4252-9818-07813E98B921}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\repositories\\ibookcopyrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B55D847D-B73D-4252-9818-07813E98B921}|LibraryManagementSystem\\LibraryManagementSystem.csproj|d:\\courses\\.net depi\\07 - projects\\librarymanagementsystem\\librarymanagementsystem\\repositories\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B55D847D-B73D-4252-9818-07813E98B921}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\repositories\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B55D847D-B73D-4252-9818-07813E98B921}|LibraryManagementSystem\\LibraryManagementSystem.csproj|d:\\courses\\.net depi\\07 - projects\\librarymanagementsystem\\librarymanagementsystem\\views\\reservation\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B55D847D-B73D-4252-9818-07813E98B921}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\views\\reservation\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B55D847D-B73D-4252-9818-07813E98B921}|LibraryManagementSystem\\LibraryManagementSystem.csproj|d:\\courses\\.net depi\\07 - projects\\librarymanagementsystem\\librarymanagementsystem\\views\\reservation\\reservedbooks.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B55D847D-B73D-4252-9818-07813E98B921}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\views\\reservation\\reservedbooks.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B55D847D-B73D-4252-9818-07813E98B921}|LibraryManagementSystem\\LibraryManagementSystem.csproj|d:\\courses\\.net depi\\07 - projects\\librarymanagementsystem\\librarymanagementsystem\\views\\borrowscopies\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B55D847D-B73D-4252-9818-07813E98B921}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\views\\borrowscopies\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B55D847D-B73D-4252-9818-07813E98B921}|LibraryManagementSystem\\LibraryManagementSystem.csproj|d:\\courses\\.net depi\\07 - projects\\librarymanagementsystem\\librarymanagementsystem\\views\\borrowscopies\\_filterform.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B55D847D-B73D-4252-9818-07813E98B921}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\views\\borrowscopies\\_filterform.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B55D847D-B73D-4252-9818-07813E98B921}|LibraryManagementSystem\\LibraryManagementSystem.csproj|d:\\courses\\.net depi\\07 - projects\\librarymanagementsystem\\librarymanagementsystem\\views\\borrowscopies\\add.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B55D847D-B73D-4252-9818-07813E98B921}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\views\\borrowscopies\\add.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B55D847D-B73D-4252-9818-07813E98B921}|LibraryManagementSystem\\LibraryManagementSystem.csproj|d:\\courses\\.net depi\\07 - projects\\librarymanagementsystem\\librarymanagementsystem\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{B55D847D-B73D-4252-9818-07813E98B921}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PenaltyController.cs",
+              "DocumentMoniker": "D:\\Courses\\.NET DEPI\\07 - Projects\\LibraryManagementSystem\\LibraryManagementSystem\\Controllers\\PenaltyController.cs",
+              "RelativeDocumentMoniker": "LibraryManagementSystem\\Controllers\\PenaltyController.cs",
+              "ToolTip": "D:\\Courses\\.NET DEPI\\07 - Projects\\LibraryManagementSystem\\LibraryManagementSystem\\Controllers\\PenaltyController.cs",
+              "RelativeToolTip": "LibraryManagementSystem\\Controllers\\PenaltyController.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAA8wMMAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T22:05:24.915Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_ClientDashboard.cshtml",
+              "DocumentMoniker": "D:\\Courses\\.NET DEPI\\07 - Projects\\LibraryManagementSystem\\LibraryManagementSystem\\Views\\Dashboard\\_ClientDashboard.cshtml",
+              "RelativeDocumentMoniker": "LibraryManagementSystem\\Views\\Dashboard\\_ClientDashboard.cshtml",
+              "ToolTip": "D:\\Courses\\.NET DEPI\\07 - Projects\\LibraryManagementSystem\\LibraryManagementSystem\\Views\\Dashboard\\_ClientDashboard.cshtml",
+              "RelativeToolTip": "LibraryManagementSystem\\Views\\Dashboard\\_ClientDashboard.cshtml",
+              "ViewState": "AgIAABQAAAAAAAAAAAAAACAAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-16T22:04:29.201Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "_AdminDashboard.cshtml",
+              "DocumentMoniker": "D:\\Courses\\.NET DEPI\\07 - Projects\\LibraryManagementSystem\\LibraryManagementSystem\\Views\\Dashboard\\_AdminDashboard.cshtml",
+              "RelativeDocumentMoniker": "LibraryManagementSystem\\Views\\Dashboard\\_AdminDashboard.cshtml",
+              "ToolTip": "D:\\Courses\\.NET DEPI\\07 - Projects\\LibraryManagementSystem\\LibraryManagementSystem\\Views\\Dashboard\\_AdminDashboard.cshtml",
+              "RelativeToolTip": "LibraryManagementSystem\\Views\\Dashboard\\_AdminDashboard.cshtml",
+              "ViewState": "AgIAAHwAAAAAAAAAAAAAAJUAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-16T22:04:17.688Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "_MainLayout.cshtml",
+              "DocumentMoniker": "D:\\Courses\\.NET DEPI\\07 - Projects\\LibraryManagementSystem\\LibraryManagementSystem\\Views\\Shared\\_MainLayout.cshtml",
+              "RelativeDocumentMoniker": "LibraryManagementSystem\\Views\\Shared\\_MainLayout.cshtml",
+              "ToolTip": "D:\\Courses\\.NET DEPI\\07 - Projects\\LibraryManagementSystem\\LibraryManagementSystem\\Views\\Shared\\_MainLayout.cshtml",
+              "RelativeToolTip": "LibraryManagementSystem\\Views\\Shared\\_MainLayout.cshtml",
+              "ViewState": "AgIAAKwAAAAAAAAAAAAAALkAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-16T22:03:23.311Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "NotFound.cshtml",
+              "DocumentMoniker": "D:\\Courses\\.NET DEPI\\07 - Projects\\LibraryManagementSystem\\LibraryManagementSystem\\Views\\Shared\\NotFound.cshtml",
+              "RelativeDocumentMoniker": "LibraryManagementSystem\\Views\\Shared\\NotFound.cshtml",
+              "ToolTip": "D:\\Courses\\.NET DEPI\\07 - Projects\\LibraryManagementSystem\\LibraryManagementSystem\\Views\\Shared\\NotFound.cshtml",
+              "RelativeToolTip": "LibraryManagementSystem\\Views\\Shared\\NotFound.cshtml",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAAC0AAABcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-16T22:03:16.061Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Courses\\.NET DEPI\\07 - Projects\\LibraryManagementSystem\\LibraryManagementSystem\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "LibraryManagementSystem\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\Courses\\.NET DEPI\\07 - Projects\\LibraryManagementSystem\\LibraryManagementSystem\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "LibraryManagementSystem\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAB0AAAAAAAAAAAArwDYAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-16T22:02:26.763Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\Courses\\.NET DEPI\\07 - Projects\\LibraryManagementSystem\\LibraryManagementSystem\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "LibraryManagementSystem\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\Courses\\.NET DEPI\\07 - Projects\\LibraryManagementSystem\\LibraryManagementSystem\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "LibraryManagementSystem\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAowBoAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T22:02:25.473Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DashboardViewModel.cs",
+              "DocumentMoniker": "D:\\Courses\\.NET DEPI\\07 - Projects\\LibraryManagementSystem\\LibraryManagementSystem\\ViewModel\\DashboardViewModel.cs",
+              "RelativeDocumentMoniker": "LibraryManagementSystem\\ViewModel\\DashboardViewModel.cs",
+              "ToolTip": "D:\\Courses\\.NET DEPI\\07 - Projects\\LibraryManagementSystem\\LibraryManagementSystem\\ViewModel\\DashboardViewModel.cs",
+              "RelativeToolTip": "LibraryManagementSystem\\ViewModel\\DashboardViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T22:02:19.191Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "GlobalUsing.cs",
+              "DocumentMoniker": "D:\\Courses\\.NET DEPI\\07 - Projects\\LibraryManagementSystem\\LibraryManagementSystem\\GlobalUsing.cs",
+              "RelativeDocumentMoniker": "LibraryManagementSystem\\GlobalUsing.cs",
+              "ToolTip": "D:\\Courses\\.NET DEPI\\07 - Projects\\LibraryManagementSystem\\LibraryManagementSystem\\GlobalUsing.cs",
+              "RelativeToolTip": "LibraryManagementSystem\\GlobalUsing.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T21:57:46.794Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "BookCopy.cs",
+              "DocumentMoniker": "D:\\Courses\\.NET DEPI\\07 - Projects\\LibraryManagementSystem\\LibraryManagementSystem\\Models\\BookCopy.cs",
+              "RelativeDocumentMoniker": "LibraryManagementSystem\\Models\\BookCopy.cs",
+              "ToolTip": "D:\\Courses\\.NET DEPI\\07 - Projects\\LibraryManagementSystem\\LibraryManagementSystem\\Models\\BookCopy.cs",
+              "RelativeToolTip": "LibraryManagementSystem\\Models\\BookCopy.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAABYAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T21:54:03.156Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "BookCopyController.cs",
+              "DocumentMoniker": "D:\\Courses\\.NET DEPI\\07 - Projects\\LibraryManagementSystem\\LibraryManagementSystem\\Controllers\\BookCopyController.cs",
+              "RelativeDocumentMoniker": "LibraryManagementSystem\\Controllers\\BookCopyController.cs",
+              "ToolTip": "D:\\Courses\\.NET DEPI\\07 - Projects\\LibraryManagementSystem\\LibraryManagementSystem\\Controllers\\BookCopyController.cs",
+              "RelativeToolTip": "LibraryManagementSystem\\Controllers\\BookCopyController.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAAAAEAAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T21:52:50.794Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "MemberRepository.cs",
+              "DocumentMoniker": "D:\\Courses\\.NET DEPI\\07 - Projects\\LibraryManagementSystem\\LibraryManagementSystem\\Repositories\\MemberRepository.cs",
+              "RelativeDocumentMoniker": "LibraryManagementSystem\\Repositories\\MemberRepository.cs",
+              "ToolTip": "D:\\Courses\\.NET DEPI\\07 - Projects\\LibraryManagementSystem\\LibraryManagementSystem\\Repositories\\MemberRepository.cs",
+              "RelativeToolTip": "LibraryManagementSystem\\Repositories\\MemberRepository.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABEAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T21:48:09.433Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "IReservationRepository.cs",
+              "DocumentMoniker": "D:\\Courses\\.NET DEPI\\07 - Projects\\LibraryManagementSystem\\LibraryManagementSystem\\Repositories\\IReservationRepository.cs",
+              "RelativeDocumentMoniker": "LibraryManagementSystem\\Repositories\\IReservationRepository.cs",
+              "ToolTip": "D:\\Courses\\.NET DEPI\\07 - Projects\\LibraryManagementSystem\\LibraryManagementSystem\\Repositories\\IReservationRepository.cs",
+              "RelativeToolTip": "LibraryManagementSystem\\Repositories\\IReservationRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T21:48:05.024Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "IGenericRepository.cs",
+              "DocumentMoniker": "D:\\Courses\\.NET DEPI\\07 - Projects\\LibraryManagementSystem\\LibraryManagementSystem\\Repositories\\IGenericRepository.cs",
+              "RelativeDocumentMoniker": "LibraryManagementSystem\\Repositories\\IGenericRepository.cs",
+              "ToolTip": "D:\\Courses\\.NET DEPI\\07 - Projects\\LibraryManagementSystem\\LibraryManagementSystem\\Repositories\\IGenericRepository.cs",
+              "RelativeToolTip": "LibraryManagementSystem\\Repositories\\IGenericRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T21:47:55.05Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "IBorrowsCopyRepository.cs",
+              "DocumentMoniker": "D:\\Courses\\.NET DEPI\\07 - Projects\\LibraryManagementSystem\\LibraryManagementSystem\\Repositories\\IBorrowsCopyRepository.cs",
+              "RelativeDocumentMoniker": "LibraryManagementSystem\\Repositories\\IBorrowsCopyRepository.cs",
+              "ToolTip": "D:\\Courses\\.NET DEPI\\07 - Projects\\LibraryManagementSystem\\LibraryManagementSystem\\Repositories\\IBorrowsCopyRepository.cs",
+              "RelativeToolTip": "LibraryManagementSystem\\Repositories\\IBorrowsCopyRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T21:47:52.062Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "IBookRepository.cs",
+              "DocumentMoniker": "D:\\Courses\\.NET DEPI\\07 - Projects\\LibraryManagementSystem\\LibraryManagementSystem\\Repositories\\IBookRepository.cs",
+              "RelativeDocumentMoniker": "LibraryManagementSystem\\Repositories\\IBookRepository.cs",
+              "ToolTip": "D:\\Courses\\.NET DEPI\\07 - Projects\\LibraryManagementSystem\\LibraryManagementSystem\\Repositories\\IBookRepository.cs",
+              "RelativeToolTip": "LibraryManagementSystem\\Repositories\\IBookRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T21:47:07.412Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "IBookCopyRepository.cs",
+              "DocumentMoniker": "D:\\Courses\\.NET DEPI\\07 - Projects\\LibraryManagementSystem\\LibraryManagementSystem\\Repositories\\IBookCopyRepository.cs",
+              "RelativeDocumentMoniker": "LibraryManagementSystem\\Repositories\\IBookCopyRepository.cs",
+              "ToolTip": "D:\\Courses\\.NET DEPI\\07 - Projects\\LibraryManagementSystem\\LibraryManagementSystem\\Repositories\\IBookCopyRepository.cs",
+              "RelativeToolTip": "LibraryManagementSystem\\Repositories\\IBookCopyRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T21:46:46.887Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "GenericRepository.cs",
+              "DocumentMoniker": "D:\\Courses\\.NET DEPI\\07 - Projects\\LibraryManagementSystem\\LibraryManagementSystem\\Repositories\\GenericRepository.cs",
+              "RelativeDocumentMoniker": "LibraryManagementSystem\\Repositories\\GenericRepository.cs",
+              "ToolTip": "D:\\Courses\\.NET DEPI\\07 - Projects\\LibraryManagementSystem\\LibraryManagementSystem\\Repositories\\GenericRepository.cs",
+              "RelativeToolTip": "LibraryManagementSystem\\Repositories\\GenericRepository.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAAADQAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T21:42:37.903Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Courses\\.NET DEPI\\07 - Projects\\LibraryManagementSystem\\LibraryManagementSystem\\Views\\Reservation\\Index.cshtml",
+              "RelativeDocumentMoniker": "LibraryManagementSystem\\Views\\Reservation\\Index.cshtml",
+              "ToolTip": "D:\\Courses\\.NET DEPI\\07 - Projects\\LibraryManagementSystem\\LibraryManagementSystem\\Views\\Reservation\\Index.cshtml",
+              "RelativeToolTip": "LibraryManagementSystem\\Views\\Reservation\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-16T19:36:53.479Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ReservedBooks.cshtml",
+              "DocumentMoniker": "D:\\Courses\\.NET DEPI\\07 - Projects\\LibraryManagementSystem\\LibraryManagementSystem\\Views\\Reservation\\ReservedBooks.cshtml",
+              "RelativeDocumentMoniker": "LibraryManagementSystem\\Views\\Reservation\\ReservedBooks.cshtml",
+              "ToolTip": "D:\\Courses\\.NET DEPI\\07 - Projects\\LibraryManagementSystem\\LibraryManagementSystem\\Views\\Reservation\\ReservedBooks.cshtml",
+              "RelativeToolTip": "LibraryManagementSystem\\Views\\Reservation\\ReservedBooks.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAPsAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-16T19:27:36.943Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ReservationController.cs",
+              "DocumentMoniker": "D:\\Courses\\.NET DEPI\\07 - Projects\\LibraryManagementSystem\\LibraryManagementSystem\\Controllers\\ReservationController.cs",
+              "RelativeDocumentMoniker": "LibraryManagementSystem\\Controllers\\ReservationController.cs",
+              "ToolTip": "D:\\Courses\\.NET DEPI\\07 - Projects\\LibraryManagementSystem\\LibraryManagementSystem\\Controllers\\ReservationController.cs",
+              "RelativeToolTip": "LibraryManagementSystem\\Controllers\\ReservationController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAD4vxkAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T18:38:18.635Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "_FilterForm.cshtml",
+              "DocumentMoniker": "D:\\Courses\\.NET DEPI\\07 - Projects\\LibraryManagementSystem\\LibraryManagementSystem\\Views\\BorrowsCopies\\_FilterForm.cshtml",
+              "RelativeDocumentMoniker": "LibraryManagementSystem\\Views\\BorrowsCopies\\_FilterForm.cshtml",
+              "ToolTip": "D:\\Courses\\.NET DEPI\\07 - Projects\\LibraryManagementSystem\\LibraryManagementSystem\\Views\\BorrowsCopies\\_FilterForm.cshtml",
+              "RelativeToolTip": "LibraryManagementSystem\\Views\\BorrowsCopies\\_FilterForm.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-16T18:24:48.564Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "site.css",
+              "DocumentMoniker": "D:\\Courses\\.NET DEPI\\07 - Projects\\LibraryManagementSystem\\LibraryManagementSystem\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "LibraryManagementSystem\\wwwroot\\css\\site.css",
+              "ToolTip": "D:\\Courses\\.NET DEPI\\07 - Projects\\LibraryManagementSystem\\LibraryManagementSystem\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "LibraryManagementSystem\\wwwroot\\css\\site.css",
+              "ViewState": "AgIAACsAAAAAAAAAAAD4v0IAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-12-16T14:24:18.709Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Courses\\.NET DEPI\\07 - Projects\\LibraryManagementSystem\\LibraryManagementSystem\\Views\\BorrowsCopies\\Index.cshtml",
+              "RelativeDocumentMoniker": "LibraryManagementSystem\\Views\\BorrowsCopies\\Index.cshtml",
+              "ToolTip": "D:\\Courses\\.NET DEPI\\07 - Projects\\LibraryManagementSystem\\LibraryManagementSystem\\Views\\BorrowsCopies\\Index.cshtml",
+              "RelativeToolTip": "LibraryManagementSystem\\Views\\BorrowsCopies\\Index.cshtml",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAACkAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-16T14:22:11.743Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Add.cshtml",
+              "DocumentMoniker": "D:\\Courses\\.NET DEPI\\07 - Projects\\LibraryManagementSystem\\LibraryManagementSystem\\Views\\BorrowsCopies\\Add.cshtml",
+              "RelativeDocumentMoniker": "LibraryManagementSystem\\Views\\BorrowsCopies\\Add.cshtml",
+              "ToolTip": "D:\\Courses\\.NET DEPI\\07 - Projects\\LibraryManagementSystem\\LibraryManagementSystem\\Views\\BorrowsCopies\\Add.cshtml",
+              "RelativeToolTip": "LibraryManagementSystem\\Views\\BorrowsCopies\\Add.cshtml",
+              "ViewState": "AgIAAH4AAAAAAAAAAAAAAJcAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-16T13:23:30.672Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

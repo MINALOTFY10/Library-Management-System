@@ -1,0 +1,166 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Log in";
+}
+
+<style>
+    body {
+        background-color: #f0f5ff !important;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .login-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80vh;
+    }
+
+    .login-box {
+        background: #fff;
+        border-radius: 25px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        width: 450px;
+        text-align: center;
+    }
+
+    .login-header {
+        margin-bottom: 20px;
+    }
+
+    .login-header h2 {
+        font-size: 24px;
+        margin: 10px 0 5px;
+        color: black;
+        font-weight: 600
+    }
+
+    .login-header p {
+        font-size: 14px;
+        color: #888;
+    }
+
+    .login-form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .form-floating label {
+     font-size: 14px;
+    }
+
+    .form-group {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .remember-me {
+        font-size: 14px;
+    }
+
+    .forgot-link {
+        color: #007bff;
+        text-decoration: none;
+        font-size: 14px;
+    }
+
+    .forgot-link:hover {
+        text-decoration: underline;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        padding: 10px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .btn-primary:hover {
+         background-color: #0056b3;
+    }
+
+    .register-section {
+        margin-top: 20px;
+        font-size: 14px;
+    }
+
+    .register-section a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    .register-section a:hover {
+        text-decoration: underline;
+    }
+
+    .fa-book {
+        color: #0B8ADD;
+        font-size: 2.1rem
+    }
+
+    #login-submit {
+        border-radius: 25px;
+        padding: 10px 0;
+        font-weight: 600;
+        font-size: 1.1rem
+    }
+</style>
+
+<!-- Custom fonts for this template-->
+<link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+<!-- Custom styles for this template-->
+<link href="/css/sb-admin-2.min.css" rel="stylesheet">
+
+<div class="login-container">
+    <div class="login-box">
+        <div class="login-header">
+            <div class="d-flex justify-content-center mb-2">
+                <div class="sidebar-brand-icon rotate-n-15 mr-3 my-auto">
+                    <i class="fas fa-book"></i>
+                </div>
+                <h2 class="mt-0">BookNest</h2>
+            </div>
+            
+            <p>Your Library System</p>
+        </div>
+        <form id="account" method="post" class="login-form">
+            <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+            <div class="form-floating mb-3">
+                <input asp-for="Input.Email" class="form-control" autocomplete="username" placeholder="Username" />
+                <label asp-for="Input.Email">Username</label>
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </div>
+            <div class="form-floating mb-3">
+                <input asp-for="Input.Password" class="form-control" autocomplete="current-password" placeholder="Password" />
+                <label asp-for="Input.Password">Password</label>
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="remember-me">
+                    <input asp-for="Input.RememberMe" />
+                    Remember this Device
+                </label>
+                <a id="forgot-password" asp-page="./ForgotPassword" class="forgot-link">Forgot Password?</a>
+            </div>
+            <button id="login-submit" type="submit" class="btn btn-primary">Sign In</button>
+            <div class="register-section">
+                <p>New to BookNest? <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Create an account</a></p>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+

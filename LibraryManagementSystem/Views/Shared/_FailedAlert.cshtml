@@ -1,0 +1,56 @@
+﻿@model string
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <style>
+        .alert {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 1050;
+            display: none;
+            opacity: 0.9;
+        }
+
+        .alert-failed {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            font-size: 16px;
+            border: 1px solid #f5c2c7;
+            background-color: #f8d7da;
+            color: #842029;
+            border-radius: 5px;
+            max-width: 20rem;
+        }
+
+        .alert-failed i {
+            color: #dc3545;
+            font-size: 20px;
+        }
+
+        .btn-close {
+            border: none;
+            background: transparent;
+            font-size: 18px;
+            color: #842029;
+            margin-left: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="failedAlert" class="alert alert-failed alert-dismissible fade show align-items-center d-flex" role="alert">
+        <i class="fas fa-times-circle mr-3"></i>
+        <span>@Model</span>
+        <button type="button" class="btn-close mr-auto" data-bs-dismiss="alert" aria-label="Close">
+            <i class="fa-solid fa-xmark" style="color: #9da0a4;"></i>
+        </button>
+    </div>
+</body>
+</html>

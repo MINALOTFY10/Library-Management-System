@@ -1,0 +1,124 @@
+﻿@model PagerSearchViewModel
+
+<div class="d-flex">
+    <!-- Display the current entry range -->
+    <div class="d-flex justify-content-between align-items-center mb-2">
+        <div>
+            @if (Model.Pager.TotalItems > 0)
+            {
+
+                int startItem = (Model.Pager.CurrentPage - 1) * Model.Pager.PageSize + 1;
+                int endItem = Math.Min(Model.Pager.CurrentPage * Model.Pager.PageSize, Model.Pager.TotalItems);
+                <span>Showing @startItem to @endItem of @Model.Pager.TotalItems entries</span>
+            }
+            else
+            {
+                <span>No entries found</span>
+            }
+        </div>
+    </div>
+
+    <!-- Pagination Controls -->
+    @if (Model.Pager.TotalPages > 1)
+
+    {
+        <ul class="pagination justify-content-end p-0 m-0 ml-auto">
+            @if (Model.Pager.CurrentPage > 1)
+
+            {
+                <li class="page-item">
+                    <a class="page-link border-primary"
+                       asp-controller=@ViewBag.controller
+                       asp-action=@ViewBag.action
+                       asp-route-pg="1"
+                       asp-route-searchQuery="@Model.SearchQuery"
+                       asp-route-Status="@ViewBag.Filter.Status"
+                       asp-route-BorrowDateFrom="@ViewBag.Filter.BorrowDateFrom?.ToString("yyyy-MM-dd")"
+                       asp-route-BorrowDateTo="@ViewBag.Filter.BorrowDateTo?.ToString("yyyy-MM-dd")"
+                       asp-route-DueDateFrom="@ViewBag.Filter.DueDateFrom?.ToString("yyyy-MM-dd")"
+                       asp-route-DueDateTo="@ViewBag.Filter.DueDateTo?.ToString("yyyy-MM-dd")"
+                       asp-route-ReturnDateFrom="@ViewBag.Filter.DueDateFrom?.ToString("yyyy-MM-dd")"
+                       asp-route-ReturnDateTo="@ViewBag.Filter.DueDateTo?.ToString("yyyy-MM-dd")"
+                       asp-route-sortBy="@ViewBag.Filter.SortBy"
+                       asp-route-sortOrder="@ViewBag.Filter.SortOrder">First</a>
+                </li>
+
+                <li>
+                    <a class="page-link border-primary"
+                       asp-controller="@ViewBag.controller"
+                       asp-action=@ViewBag.action
+                       asp-route-pg="@(Model.Pager.CurrentPage - 1)"
+                       asp-route-searchQuery="@Model.SearchQuery"
+                       asp-route-Status="@ViewBag.Filter.Status"
+                       asp-route-BorrowDateFrom="@ViewBag.Filter.BorrowDateFrom?.ToString("yyyy-MM-dd")"
+                       asp-route-BorrowDateTo="@ViewBag.Filter.BorrowDateTo?.ToString("yyyy-MM-dd")"
+                       asp-route-DueDateFrom="@ViewBag.Filter.DueDateFrom?.ToString("yyyy-MM-dd")"
+                       asp-route-DueDateTo="@ViewBag.Filter.DueDateTo?.ToString("yyyy-MM-dd")"
+                       asp-route-ReturnDateFrom="@ViewBag.Filter.DueDateFrom?.ToString("yyyy-MM-dd")"
+                       asp-route-ReturnDateTo="@ViewBag.Filter.DueDateTo?.ToString("yyyy-MM-dd")"
+                       asp-route-sortBy="@ViewBag.Filter.SortBy"
+                       asp-route-sortOrder="@ViewBag.Filter.SortOrder">Previous</a>
+                </li>
+            }
+
+            @for (var pge = Model.Pager.StartPage; pge <= Model.Pager.EndPage; pge++)
+
+            {
+                <li class="page-item @(pge == Model.Pager.CurrentPage ? "active" : "")">
+                    <a class="page-link border-primary @(pge == Model.Pager.CurrentPage ? "text-white" : "")"
+                       asp-controller=@ViewBag.controller
+                       asp-action=@ViewBag.action
+                       asp-route-pg="@pge"
+                       asp-route-searchQuery="@Model.SearchQuery"
+                       asp-route-Status="@ViewBag.Filter.Status"
+                       asp-route-BorrowDateFrom="@ViewBag.Filter.BorrowDateFrom?.ToString("yyyy-MM-dd")"
+                       asp-route-BorrowDateTo="@ViewBag.Filter.BorrowDateTo?.ToString("yyyy-MM-dd")"
+                       asp-route-DueDateFrom="@ViewBag.Filter.DueDateFrom?.ToString("yyyy-MM-dd")"
+                       asp-route-DueDateTo="@ViewBag.Filter.DueDateTo?.ToString("yyyy-MM-dd")"
+                       asp-route-ReturnDateFrom="@ViewBag.Filter.DueDateFrom?.ToString("yyyy-MM-dd")"
+                       asp-route-ReturnDateTo="@ViewBag.Filter.DueDateTo?.ToString("yyyy-MM-dd")"
+                       asp-route-sortBy="@ViewBag.Filter.SortBy"
+                       asp-route-sortOrder="@ViewBag.Filter.SortOrder">@pge</a>
+                </li>
+            }
+
+            @if (Model.Pager.CurrentPage < Model.Pager.TotalPages)
+
+            {
+                <li class="page-item">
+                    <a class="page-link text-black border-primary"
+                       asp-controller=@ViewBag.controller
+                       asp-action=@ViewBag.action
+                       asp-route-pg="@(Model.Pager.CurrentPage + 1)"
+                       asp-route-searchQuery="@Model.SearchQuery"
+                       asp-route-Status="@ViewBag.Filter.Status"
+                       asp-route-BorrowDateFrom="@ViewBag.Filter.BorrowDateFrom?.ToString("yyyy-MM-dd")"
+                       asp-route-BorrowDateTo="@ViewBag.Filter.BorrowDateTo?.ToString("yyyy-MM-dd")"
+                       asp-route-DueDateFrom="@ViewBag.Filter.DueDateFrom?.ToString("yyyy-MM-dd")"
+                       asp-route-DueDateTo="@ViewBag.Filter.DueDateTo?.ToString("yyyy-MM-dd")"
+                       asp-route-ReturnDateFrom="@ViewBag.Filter.DueDateFrom?.ToString("yyyy-MM-dd")"
+                       asp-route-ReturnDateTo="@ViewBag.Filter.DueDateTo?.ToString("yyyy-MM-dd")"
+                       asp-route-sortBy="@ViewBag.Filter.SortBy"
+                       asp-route-sortOrder="@ViewBag.Filter.SortOrder">Next</a>
+                </li>
+
+                <li class="page-item">
+                    <a class="page-link text-black border-primary"
+                       asp-controller=@ViewBag.controller
+                       asp-action=@ViewBag.action
+                       asp-route-pg="@(Model.Pager.TotalPages)"
+                       asp-route-searchQuery="@Model.SearchQuery"
+                       asp-route-Status="@ViewBag.Filter.Status"
+                       asp-route-BorrowDateFrom="@ViewBag.Filter.BorrowDateFrom?.ToString("yyyy-MM-dd")"
+                       asp-route-BorrowDateTo="@ViewBag.Filter.BorrowDateTo?.ToString("yyyy-MM-dd")"
+                       asp-route-DueDateFrom="@ViewBag.Filter.DueDateFrom?.ToString("yyyy-MM-dd")"
+                       asp-route-DueDateTo="@ViewBag.Filter.DueDateTo?.ToString("yyyy-MM-dd")"
+                       asp-route-ReturnDateFrom="@ViewBag.Filter.DueDateFrom?.ToString("yyyy-MM-dd")"
+                       asp-route-ReturnDateTo="@ViewBag.Filter.DueDateTo?.ToString("yyyy-MM-dd")"
+                       asp-route-sortBy="@ViewBag.Filter.SortBy"
+                       asp-route-sortOrder="@ViewBag.Filter.SortOrder">Last</a>
+                </li>
+            }
+        </ul>
+    }
+</div>

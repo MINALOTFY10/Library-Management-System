@@ -1,0 +1,99 @@
+﻿@model (Book Book, bool IsAvailable)
+
+@{
+    ViewData["Title"] = "Book Details";
+}
+
+<head>
+    <link href="/css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/site.css">
+
+    <style>
+        .status-badge {
+            background: radial-gradient(100% 100% at 100% 0%, #FFB84D 0%, #FF6A00 100%);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .user-icon {
+            color: #ff6347;
+            font-size: 20px;
+        }
+
+        .user-name {
+            font-size: 16px;
+        }
+
+        .condition-text {
+            font-size: 1.2rem;
+            padding: 0;
+            margin: 0
+        }
+
+        .fa-circle-check {
+            color: #FFD43B;
+            font-size: 1.3rem;
+        }
+
+        .fa-circle-xmark {
+            color: #da1010;
+            font-size: 1.3rem;
+        }
+    </style>
+</head>
+
+<div class="container mt-5">
+    <div class="text-center mb-4">
+        <h2 class="display-4 text-primary">📚 Book Details</h2>
+        <p class="text-muted">Find all the information about the selected book at a glance</p>
+    </div>
+    <div class="card border-0 mb-5">
+        <div class="form-header">Book Overview</div>
+        <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+            <div class="card-body bg-light px-4 py-0 pt-4 mx-3">
+                <!-- Book Details Section -->
+                <div class="row g-4">
+                    <partial name="~/Views/Book/_BookDetails.cshtml" model="@Model.Book" />
+                </div>
+
+                <!-- Book Copies Section -->
+                @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+                {
+                    <partial name="~/Views/Book/_BookCopies.cshtml" model="@Model.Book" />
+                }
+            </div>
+
+            <div class="card-footer bg-light text-center">
+                @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+                {
+                    <a class="bttn-primary mx-2 my-2" asp-action="Edit" asp-route-id="@Model.Book?.Id">
+                        <p class="font-weight-bold p-0 m-0" style="font-size: 1rem; color: white">Edit</p>
+                    </a>
+
+                    <a class="bttn-danger mx-2 my-2" asp-action="Delete" asp-route-id="@Model.Book?.Id">
+                        <p class="font-weight-bold p-0 m-0" style="font-size: 1rem; color: white">Delete</p>
+                    </a>
+                }
+                else
+                {
+                    @if (Model.IsAvailable)
+                    {
+                        <a class="bttn-primary mx-2 my-2"
+                           asp-controller="Reservation"
+                           asp-action="ReserveBook"
+                           asp-route-id="@Model.Book?.Id"
+                           onclick="return confirm('Are you sure you want to reserve this book?');">
+                            <p class="font-weight-bold p-0 m-0" style="font-size: 1rem; color: white">Reserve</p>
+                        </a>
+                    }
+                }
+
+                <a class="bttn-gray mx-2 my-2 px-4" asp-action="Index">
+                    <p class="font-weight-bold p-0 m-0" style="font-size: 1rem; color: white">Back to List</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

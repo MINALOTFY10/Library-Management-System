@@ -1,0 +1,493 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using LibraryManagementSystem.Models
+@inject SignInManager<Member> SignInManager
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>BookNest</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="/css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/site.css">
+
+    <!-- Custom styles for this page -->
+    <link href="/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<!-- Add this in the <head> section -->
+<style>
+    .sidebar-dark .my-nav-item {
+        margin: 5px 0;
+        padding: 0;
+        list-style-type: none;
+    }
+
+    .sidebar-dark .my-nav-item .nav-link {
+        padding: 12px 20px; /* Adjust padding to your preference */
+        margin: 0;
+        display: flex;
+        align-items: center;
+        text-align: left;
+        color: #000; /* Default text color */
+        display: block !important;
+    }
+
+     .sidebar-dark .my-nav-item .nav-link p {
+        color: black;
+        font-weight: 400;
+    }
+
+    .sidebar-dark .my-nav-item .nav-link i {
+        color: black;
+        width: 1.9rem;
+        margin-left: 3px;
+        margin-right: 10px; /* Space between icon and text */
+        min-width: 20px; /* Ensure icons have consistent width */
+        text-align: center;
+    }
+
+    .sidebar-dark .my-nav-item .nav-link {
+        position: relative;
+        overflow: hidden; 
+    }
+
+    .sidebar-dark .my-nav-item .nav-link::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background-color: #E0F0FB;
+        z-index: 0; 
+        transition: left 0.5s ease; 
+    }
+
+        .sidebar-dark .my-nav-item .nav-link:hover::before {
+        left: 0;
+    }
+
+    .sidebar-dark .my-nav-item .nav-link:hover p {
+        color: black !important;
+        position: relative;
+        z-index: 1; 
+    }
+
+    .sidebar-dark .my-nav-item .nav-link:hover i {
+        color: #0B8ADD !important;
+        position: relative;
+        z-index: 1;
+    }
+
+    .sidebar-dark .my-nav-item.active .nav-link {
+        background-color: #E0F0FB;
+        color: #0B8ADD !important;
+    }
+
+    .sidebar-dark .my-nav-item.active .nav-link p {
+        color: #0B8ADD !important;
+    }
+
+    .sidebar-dark .my-nav-item.active .nav-link i {
+        color: #0B8ADD !important;
+    }
+
+    .sidebar {
+        color: black;
+        margin: 18px;
+    }
+
+    .sidebar-brand-text {
+        color: black;
+    }
+
+    .fa-book {
+        color: #0B8ADD
+    }
+
+    .sidebar-divider {
+        color: #0B8ADD
+    }
+
+    .sidebar-heading p {
+        color: #999999;
+        margin-left: 5px;
+        font-size: 12px;
+        font-weight: 200
+    }
+
+    .sidebar-dark #sidebarToggle {
+        background-color: #0085db !important;
+        color: white !important;
+        margin-bottom: 25px !important;
+    }
+
+    .sidebar-dark #sidebarToggle::after {
+        color: white !important;
+    }
+
+</style>
+
+
+<body id="page-top sidebar-toggled">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- **** Sidebar **** -->
+        <ul class="navbar-nav card-container sidebar sidebar-dark accordion mb-4" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" asp-area="" asp-controller="Home" asp-action="Index">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-book"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">BookNest</div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0 mb-4">
+
+            <!-- Heading -->
+            <div class="sidebar-heading mb-0 pb-0">
+                <p class="mb-0">Overview</p>
+            </div>
+
+            <!-- Nav Item - Dashboard -->
+            @* @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+            { *@
+                @* <li class="nav-item active">
+                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">
+                        <i class="fas fa-fw fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li> *@
+
+            <li class="nav-item my-nav-item active">
+                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">
+                    <i class="fas fa-fw fa-tachometer-alt my-auto"></i>
+                    <p class="d-inline-block my-auto">Dashboard</p>
+                </a>
+            </li>
+            @* } *@
+
+            <!-- Heading -->
+            <div class="sidebar-heading mb-0 pb-0 mt-3">
+                <p class="mb-0">Library</p>
+            </div>
+
+            <!-- Nav Item - Books -->
+            <li class="nav-item my-nav-item">
+                @if (SignInManager.IsSignedIn(User) && User.IsInRole("Client"))
+                {
+                    <a class="nav-link" asp-area="" asp-controller="Book" asp-action="Index">
+                        <i class="fas fa-fw fa-book-open my-auto"></i>
+                        <p class="d-inline-block my-auto">Books</p>
+                    </a>
+                }
+                else
+                {
+                    <a class="nav-link" asp-area="" asp-controller="Book" asp-action="Index">
+                        <i class="fas fa-fw fa-book-open my-auto"></i>
+                        <p class="d-inline-block my-auto">Books</p>
+                    </a>
+                }
+                
+            </li>
+
+            <!-- Heading -->
+            <div class="sidebar-heading mb-0 pb-0 mt-3">
+                <p class="mb-0">Membership</p>
+            </div>
+
+
+            @if (SignInManager.IsSignedIn(User) && User.IsInRole("Client"))
+            {
+                <!-- Nav Item - Borrowed Books -->
+				<li class="nav-item my-nav-item">
+                    <a class="nav-link" asp-area="" asp-controller="BorrowsCopies" asp-action="UserBorrowedBooks">
+						<i class="fas fa-fw fa-book-reader my-auto"></i>
+						<p class="d-inline-block my-auto">Borrowed Books</p>
+					</a>
+				</li>
+
+				<!-- Nav Item - Reserved Books -->
+				<li class="nav-item my-nav-item">
+					<a class="nav-link" asp-area="" asp-controller="Reservation" asp-action="ReservedBooks">
+						<i class="fas fa-fw fa-bookmark my-auto"></i>
+						<p class="d-inline-block my-auto">Reserved Books</p>
+					</a>
+                </li>
+
+                <!-- Heading -->
+                <div class="sidebar-heading mb-0 pb-0 mt-3">
+                    <p class="mb-0">Administration</p>
+                </div>
+
+                <!-- Nav Item - Penalties -->
+                <li class="nav-item my-nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Penalty" asp-action="MemeberPenalties">
+                        <i class="fas fa-fw fa-coins my-auto"></i>
+                        <p class="d-inline-block my-auto">My Penalties</p>
+                    </a>
+                </li>
+            }
+            else
+            {
+                <!-- Nav Item - Members -->
+                <li class="nav-item my-nav-item">
+                    <a class="nav-link" asp-area="" asp-controller="Member" asp-action="Index">
+                        <i class="fa-solid fa-users my-auto"></i>
+                        <p class="d-inline-block my-auto">Members</p>
+                    </a>
+                </li>
+
+                <!-- Nav Item - Borrow Record -->
+                <li class="nav-item my-nav-item">
+                    <a class="nav-link" asp-area="" asp-controller="BorrowsCopies" asp-action="Index">
+                        <i class="fas fa-fw fa-clipboard my-auto"></i>
+                        <p class="d-inline-block my-auto">Manage Borrowing</p>
+                    </a>
+                </li>
+
+                <!-- Nav Item - Reservations -->
+                <li class="nav-item my-nav-item">
+                    <a class="nav-link" asp-area="" asp-controller="Reservation" asp-action="Index">
+                        <i class="fas fa-fw fa-table my-auto"></i>
+                        <p class="d-inline-block my-auto">Reservation</p>
+                    </a>
+                </li>
+
+                <!-- Heading -->
+                <div class="sidebar-heading mb-0 pb-0 mt-3">
+                    <p class="mb-0">Administration</p>
+                </div>
+
+                <!-- Nav Item - Penalties -->
+                <li class="nav-item my-nav-item">
+                    <a class="nav-link" asp-area="" asp-controller="Penalty" asp-action="Index">
+                        <i class="fas fa-fw fa-coins my-auto"></i>
+                        <p class="d-inline-block my-auto">Penalties</p>
+                    </a>
+                </li>
+            }
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+        </ul>
+        <!-- **** End of Sidebar **** -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+                <!-- **** Topbar **** -->
+                <nav class="navbar card-container navbar-expand navbar-light bg-white topbar mb-4 static-top mt-2 mr-3">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- Topbar Search -->
+                    @* <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                    <div class="input-group">
+                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                    aria-label="Search" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                    <button class="btn btn-primary" type="button">
+                    <i class="fas fa-search fa-sm"></i>
+                    </button>
+                    </div>
+                    </div>
+                    </form>  *@
+
+                    <!-- Topbar Navbar -->
+                    @* ml-auto *@
+
+                    <ul class="navbar-nav">
+                        @if (SignInManager.IsSignedIn(User))
+                        {
+                            <!-- Nav Item - User Information -->
+                            <li class="nav-item dropdown no-arrow">
+                                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <img class="img-profile rounded-circle"
+                                         src="/img/undraw_profile.svg">
+                                    <div class="d-flex justify-content-center flex-column">
+                                        <span class="ml-2 d-none d-lg-inline text-gray-700 small" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">
+                                            @User.Identity?.Name
+                                        </span>
+                                        <span class="ml-2 d-none d-lg-inline text-gray-600 small" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">
+                                            @(User.IsInRole("Admin") ? "Admin" : "User")
+                                        </span>
+                                    </div>
+                                    
+                                    
+                                </a>
+                                <!-- Dropdown - User Information -->
+                                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                     aria-labelledby="userDropdown">
+                                    <a class="dropdown-item" href="/Account/Manage">
+                                        <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        Profile
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        Settings
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        Logout
+                                    </a>
+                                </div>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a>
+                            </li>
+                        }
+
+                        <div class="topbar-divider d-none d-sm-block"></div>
+                    </ul>
+
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <p class ="time-display my-auto" id="time-display"></p>
+                        </li>
+                    </ul>
+
+                </nav>
+                <!-- **** End of Topbar **** -->
+
+                <!-- Begin Page Content -->
+                <div class="mr-3">
+                    @RenderBody()
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+
+                    <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                        <button type="submit" class="btn btn-primary">Logout</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="/js/sb-admin-2.min.js"></script>
+
+    <script>
+        // Get all nav items
+        const navItems = document.querySelectorAll('.nav-item');
+
+        // Get current URL path
+        const currentPath = window.location.pathname;
+
+        // Remove active class from all nav items
+        function removeAllActive() {
+            navItems.forEach(item => {
+                item.classList.remove('active');
+            });
+        }
+
+        // Add click event listeners to all nav items
+        navItems.forEach(item => {
+            const link = item.querySelector('.nav-link');
+
+            // Check if the link exists
+            if (link && link.getAttribute('href') === currentPath) {
+                removeAllActive();
+                item.classList.add('active');
+            }
+
+            // Handle click events
+            item.addEventListener('click', () => {
+                removeAllActive();
+                item.classList.add('active');
+            });
+        });
+
+        function updateTime() {
+            const now = new Date();
+            const timeOptions = { hour: '2-digit', minute: '2-digit', hour12: true };
+            const dateOptions = { year: 'numeric', month: 'short', day: '2-digit' };
+
+            const timeString = now.toLocaleTimeString('en-US', timeOptions);
+            const dateString = now.toLocaleDateString('en-US', dateOptions);
+
+            document.getElementById('time-display').innerHTML = `${timeString}<br>${dateString}`;
+        }
+
+        setInterval(updateTime, 1000);
+        updateTime();
+
+    </script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

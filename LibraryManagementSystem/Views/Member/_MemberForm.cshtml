@@ -1,0 +1,63 @@
+﻿ @model MemberMembershipViewModel
+
+<input type="hidden" asp-for="Id" />
+
+<!-- FirstName -->
+<div class="form-section">
+    <label asp-for="FirstName">First Name</label>
+    <input asp-for="FirstName" class="form-control" placeholder="Enter First Name" />
+    <span asp-validation-for="FirstName" class="text-danger"></span>
+</div>
+
+<!-- LastName -->
+<div class="form-section">
+    <label asp-for="LastName">LastName</label>
+    <input asp-for="LastName" class="form-control" placeholder="Enter Last Name" />
+    <span asp-validation-for="LastName" class="text-danger"></span>
+</div>
+
+<!-- Email -->
+<div class="form-section">
+    <label asp-for="Email">Email</label>
+    <input asp-for="Email" class="form-control" placeholder="Enter Email" />
+    <span asp-validation-for="Email" class="text-danger"></span>
+</div>
+
+<!-- Phone -->
+<div class="form-section">
+    <label asp-for="PhoneNumber">Phone Number</label>
+    <input asp-for="PhoneNumber" class="form-control" placeholder="Enter Phone Number" />
+    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+</div>
+
+<!-- IsActive -->
+<div class="form-section form-check">
+    <div class="form-switch d-flex flex-column">
+        <label asp-for="IsActive" class="form-check-label mb-1" for="isActiveSwitch">Active Member</label>
+        <input asp-for="IsActive" class=" toggle-switch" type="checkbox" id="isActiveSwitch" />
+    </div>
+    <span asp-validation-for="IsActive" class="text-danger"></span>
+</div>
+
+<!-- Date Of Membership -->
+<div class="form-section">
+    <label asp-for="DateOfMembership">Joining Date</label>
+    <input asp-for="DateOfMembership" class="form-control" type="date"
+           value="@Model.DateOfMembership.ToString("yyyy-MM-dd")" placeholder="Select a date" />
+    <span asp-validation-for="DateOfMembership" class="text-danger"></span>
+</div>
+
+<!-- Membership Type -->
+<div class="form-section">
+    <label asp-for="MembershipType" class="form-label">Membership Type</label>
+    <select name="MembershipType" class="form-control custom-select p-2 rounded" asp-items="Model.MembershipSelectList">
+    </select>
+    <span asp-validation-for="MembershipType" class="text-danger"></span>
+</div>
+
+<!-- Total Borrowed Books -->
+<div class="form-section">
+    <label asp-for="TotalBorrowedBooks">Borrowing Count</label>
+    <input asp-for="TotalBorrowedBooks" class="form-control" placeholder="Enter Borrowing Count" />
+    <span asp-validation-for="TotalBorrowedBooks" class="text-danger"></span>
+</div>

@@ -1,0 +1,66 @@
+﻿@model BookGenresViewModel
+
+@{
+    SelectList genreOptions = new SelectList(Model.Genres, "Id", "Name");
+}
+
+<input type="hidden" asp-for="Id" />
+
+<!-- Title -->
+<div class="form-section">
+    <label asp-for="Title">Title</label>
+    <input asp-for="Title" class="form-control" placeholder="Enter book title" />
+    <span asp-validation-for="Title" class="text-danger"></span>
+</div>
+
+<!-- Author -->
+<div class="form-section">
+    <label asp-for="Author">Author</label>
+    <input asp-for="Author" class="form-control" placeholder="Enter author name" />
+    <span asp-validation-for="Author" class="text-danger"></span>
+</div>
+
+<!-- ISBN -->
+<div class="form-section">
+    <label asp-for="ISBN">ISBN</label>
+    <input asp-for="ISBN" class="form-control" placeholder="Enter ISBN number" />
+    <span asp-validation-for="ISBN" class="text-danger"></span>
+</div>
+
+<!-- Publisher -->
+<div class="form-section">
+    <label asp-for="Publisher">Publisher</label>
+    <input asp-for="Publisher" class="form-control" placeholder="Enter publisher name" />
+    <span asp-validation-for="Publisher" class="text-danger"></span>
+</div>
+
+<!-- Published Date -->
+<div class="form-section">
+    <label asp-for="PublishedDate">Published Date</label>
+    <input asp-for="PublishedDate" class="form-control" type="date"
+           value="@Model.PublishedDate.ToString("yyyy-MM-dd")" placeholder="Select a date" />
+    <span asp-validation-for="PublishedDate" class="text-danger"></span>
+</div>
+
+<!-- Language -->
+<div class="form-section">
+    <label asp-for="Language">Language</label>
+    <input asp-for="Language" class="form-control" placeholder="Enter language" />
+    <span asp-validation-for="Language" class="text-danger"></span>
+</div>
+
+<!-- Genre -->
+<div class="form-section">
+    <label asp-for="GenreId">Genre</label>
+    <select asp-for="GenreId" asp-items="genreOptions" class="form-select">
+        <option value="">Select Genre</option>
+    </select>
+    <span asp-validation-for="GenreId" class="text-danger"></span>
+</div>
+
+<!-- Total Borrow Count -->
+<div class="form-section">
+    <label asp-for="TotalBorrowCount">Total Borrow Count</label>
+    <input asp-for="TotalBorrowCount" class="form-control" type="number" placeholder="Enter borrow count" />
+    <span asp-validation-for="TotalBorrowCount" class="text-danger"></span>
+</div>

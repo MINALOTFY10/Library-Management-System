@@ -1,0 +1,221 @@
+﻿@model LibraryManagementSystem.ViewModel.BorrowsCopiesViewModel
+
+@{
+    ViewData["Title"] = "Make a Borrowing Process";
+
+    var membersOptions = Model.members.Select(m => new SelectListItem
+            {
+                Value = m.Id,
+                Text = $"{m.Id.Split('-')[0]} - {m.FirstName} {m.LastName}"
+            });
+
+    SelectList booksOptions = new SelectList(Model.books, "Id", "Title");
+}
+
+<head>
+    <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
+    <link href="/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/site.css">
+
+    <style>
+        .bttn-primary, .bttn-gray {
+            height: 50px;
+            width: 180px;
+            text-decoration: none
+        }
+        
+        .select2-container {
+            font-family: 'Arial', sans-serif;
+            width: 100% !important;
+        }
+
+        /* General Style for Select Menu */
+        .select2-selection {
+            min-height: 45px !important;
+            padding: 0 15px;
+            border: 0px solid #000 !important;
+            border-radius: 8px !important;
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, #f9f9f9, #ffffff);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .select2-selection:hover {
+            border-color: #0056b3 !important;
+        }
+
+        .select2-container--default .select2-selection--multiple .select2-selection__choice {
+            background-color: #eee !important;
+            border: 1px solid #aaa !important;
+            color: black;
+            margin-top: 10px
+        }
+
+        .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+            color: black !important;
+        }
+
+        .select2-selection__rendered {
+            line-height: 28px !important; 
+            font-size: 16px; 
+            color: #333; 
+        }
+
+        .select2-selection__arrow {
+            height: 43px !important;
+            color: #007bff; /* Icon color */
+        }
+
+        .select2-container--focus .select2-selection {
+            border-color: #007bff !important;
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.4) !important; /* Glow effect */
+        }
+
+        /* Placeholder Styling */
+        .select2-selection__placeholder {
+            color: #888 !important;
+        }
+
+        /* Dropdown Styling */
+        .select2-dropdown {
+            border-radius: 8px !important;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            border: 0.5px solid #007bff;
+            overflow: hidden;
+        }
+
+        .select2-container--default .select2-selection--multiple {
+            border-radius: 8px;
+            border: 1px solid #ced4da;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .select2-selection--multiple:focus-within {
+            border-color: #007bff;
+            box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+        }
+
+        .select2-results__option {
+            padding: 10px !important;
+            font-size: 14px;
+        }
+
+        .select2-results__option--highlighted {
+            background-color: #007bff !important;
+            color: white !important;
+        }
+
+        /* Scrollbar Customization */
+        .select2-results {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .select2-results::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .select2-results::-webkit-scrollbar-thumb {
+            background-color: #007bff;
+            border-radius: 4px;
+        }
+
+        .fa-book-medical {
+            font-size: 40px;
+        }
+    </style>
+</head>
+
+<div class="container mt-5">
+    @if (TempData["FailedMessage"] != null)
+    {
+        <partial name="_FailedAlert" model="@TempData["FailedMessage"]" />
+    }
+    <div class="text-center mb-4">
+        <h2><i class="fas fa-book mr-2"></i>Lend Books to Members</h2>
+        <p class="text-muted">Select a member and book to complete the borrowing process.</p>
+    </div>
+
+    <div class="card mx-auto" style="max-width: 800px;">
+        <div class="form-header">Borrow Books</div>
+        <div class="card-body bg-white px-4 py-4">
+            <form method="post" asp-action="SaveAdd" asp-controller="BorrowsCopies" novalidate>
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+
+                <div class="mt-4 d-flex justify-content-around">
+                    <!-- Member -->
+                    <div class="form-section">
+                        <label asp-for="MemberId" class="form-label">Choose Member</label>
+                        <select asp-for="MemberId" asp-items="membersOptions" class="form-select member-select" data-bs-toggle="tooltip" title="Search and select a member">
+                            <option value="">Select Member</option>
+                        </select>
+                        <span asp-validation-for="MemberId" class="text-danger ml-2 mt-1 d-block"></span>
+                    </div>
+
+                    <!-- Member -->
+                    <div class="form-section text-center d-flex justify-content-center mx-4">
+                        <i class="fa-solid fa-book-medical mt-auto mx-4" style="color: #5468ff;"></i>
+                    </div>
+
+                    <!-- Books -->
+                    <div class="form-section">
+                        <label asp-for="BookIds" class="form-label">Choose Books</label>
+                        <select asp-for="BookIds" asp-items="booksOptions" class="form-select book-select" multiple="multiple" data-bs-toggle="tooltip" title="Search and select books">
+                        </select>
+                        <span asp-validation-for="BookIds" class="text-danger ml-2 mt-1 d-block"></span>
+                    </div>
+                </div>
+
+                <!-- Buttons -->
+                <div class="text-center mt-4 d-flex justify-content-center gap-2 flex-wrap">
+                    <button type="submit" class="bttn-primary">
+                        <i class="fas fa-save me-2"></i> Confirm
+                    </button>
+
+                    <button asp-action="Index" class="bttn-gray">
+                        <i class="fas fa-arrow-left me-2"></i> Back to List
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script>
+        window.onload = function () {
+            const alert = document.getElementById('failedAlert');
+            if (alert) {
+                alert.classList.add('show');
+
+                setTimeout(() => {
+                    alert.classList.remove('show');
+                    alert.classList.add('fade');
+                }, 3000);
+            }
+        };
+
+        $(document).ready(function () {
+            $('.member-select').select2({
+                placeholder: 'Search for a member...',
+                allowClear: true,
+                width: '100%'
+            });
+        });
+
+        $(document).ready(function () {
+            $('.book-select').select2({
+                placeholder: 'Search for a book...',
+                allowClear: true,
+                width: '100%',
+                dropdownCssClass: 'modern-dropdown'
+            });
+        });
+    </script>
+}

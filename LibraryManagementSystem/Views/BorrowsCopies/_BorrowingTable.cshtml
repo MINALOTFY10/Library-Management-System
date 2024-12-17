@@ -1,0 +1,146 @@
+﻿@model BorrowsCopiesPagerViewModel
+
+<head>
+    <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
+    <link href="/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/site.css">
+
+    <style>
+        /* From Uiverse.io by boryanakrasteva */
+        .moving-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            border: none;
+            background-color: transparent;
+            position: relative;
+            padding: 0;
+        }
+        .return-btn::after {
+            content: "Return";
+            top: 50%;
+        }
+
+        .delete-btn::after{
+            content: "Delete"; 
+            top: 90%;
+        }
+
+        .moving-btn::after {
+            width: fit-content;
+            height: fit-content;
+            position: absolute;
+            font-size: 15px;
+            color: white;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.2s linear;
+            text-align: center;
+        }
+
+        .moving-btn:hover {
+            text-decoration: none
+        }
+
+        /* Add hover effect */
+        .moving-btn:hover::after {
+            visibility: visible;
+            opacity: 1;
+            color: black;
+            top: 30%; /* Adjust position slightly upwards on hover */
+        }
+
+        .icon {
+            width: 30px;
+            height: 30px;
+            transition: 0.2s linear;
+            text-align: center;
+        }
+
+        .icon {
+            fill: white;
+            transition: 0.2s linear;
+        }
+
+        .moving-btn:hover > .icon {
+            transform: scale(1.2);
+        }
+
+        .moving-btn:hover > .icon {
+            fill: rgb(177, 139, 189);
+        }
+
+        .moving-btn:hover::after {
+            visibility: visible;
+            opacity: 1;
+            top: 105%;
+        }
+    </style>
+</head>
+
+<table class="custom-table" id="dataTable" width="100%" cellspacing="0">
+    <thead>
+        <tr>
+            <th>Member</th>
+            <th>Book</th>
+            <th>Copy ID</th>
+            <th>Borrow Date</th>
+            <th>Due Date</th>
+            <th>Return Date</th>
+            <th>Status</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.BorrowsCopies)
+        {
+            <tr>
+                <td>@item.MemberName</td>
+                <td>@item.BookName</td>
+                <td>@item.BookCopyId</td>
+                <td>@item.BorrowDate.ToString("MM/dd/yyyy")</td>
+                <td>@item.DueDate.ToString("MM/dd/yyyy")</td>
+                <td>@(item.ReturnDate.HasValue ? item.ReturnDate.Value.ToString("MM/dd/yyyy") : "N/A")</td>
+                <td>
+                    <div class="d-flex justify-content-start my-auto">
+                        @switch (item.Status)
+                        {
+                            case BookStatus.Borrowed:
+                                <p class="p-0 m-0 text-danger">Borrowed</p>
+                                break;
+                            case BookStatus.Returned:
+                                <p class="p-0 m-0 text-success">Returned</p>
+                                break;
+                        }
+                    </div>
+                </td>
+                <td class="align-content-center">
+                    <div class="d-flex justify-content-center">
+
+                        @if (item.Status == BookStatus.Borrowed)
+                        {
+                            <a asp-action="ReturnBook" asp-route-memberid="@item.MemberId" asp-route-bookid="@item.BookId" asp-route-bookcopyid="@item.BookCopyId"
+                               class="moving-btn return-btn mt-1 d-flex justify-content-center align-content-center">
+                                <i class="icon fa-solid fa-right-left my-auto" style="color: #f6c23e;"></i>
+                            </a>
+                        }
+
+                        <a asp-action="Delete"
+                           asp-route-memberid="@item.MemberId"
+                           asp-route-bookid="@item.BookId"
+                           class="moving-btn delete-btn text-danger text-lg ml-auto" title="Delete">
+                            <i class="icon fas fa-trash mt-3"></i>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

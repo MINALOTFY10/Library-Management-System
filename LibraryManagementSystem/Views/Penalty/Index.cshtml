@@ -1,0 +1,306 @@
+﻿@model PenaltiesPagerViewModel
+
+@{
+    ViewData["Title"] = "Index";
+    ViewData["Controller"] = "Penalty";
+    ViewData["Action"] = "Index";
+    Pager pager = new Pager();
+    ViewBag.Filter = Model.Filter;
+
+    int pageNo = 0;
+
+    if (Model.PagerSearchViewModel.Pager != null)
+    {
+        pager = Model.PagerSearchViewModel.Pager;
+        pageNo = pager.CurrentPage;
+    }
+}
+
+<head>
+    <!-- Custom fonts for this template -->
+    <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/css/sb-admin-2.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this page -->
+    <link href="/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/site.css">
+
+    <!-- Example for Font Awesome v6 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        .members-icon {
+            width: 2.2rem
+        }
+
+        .fa-dollar-sign {
+            font-size: 26px
+        }
+
+    </style>
+</head>
+
+<body id="page-top">
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <partial name="_SuccessAlert" model="@TempData["SuccessMessage"]" />
+    }
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Begin Page Content -->
+                <!-- DataTales Example -->
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3 d-flex">
+                        <div class="d-flex">
+                            <h4 class="m-0 font-weight-bold text-primary pt-auto mt-auto mb-1">
+                            <i class="fa-solid fa-dollar-sign mr-2 my-auto" style="color: #4e73df;"></i>
+                                Penalties Management
+                            </h4>
+                        </div>
+
+                        <button id="filterToggle" class="btn rounded ml-auto border-0">
+                            <i class="fa-solid fa-sliders" style="color: #f8f9fc;"></i>
+                        </button>
+
+                        <div class="my-auto ml-2">
+                            <a href="@Url.Action("Index")" class="btn btn-secondary">
+                                <i class="fa-solid fa-arrows-rotate" style="color: #ffffff;"></i>
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="card-body">
+
+                        <div id="filterSection" class="collapse">
+                            <form method="get" asp-action="Index" asp-controller="Penalty" class="mb-4">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>Search</label>
+                                            <input type="text" name="SearchQuery" class="form-control"
+                                                   value="@Model.Filter.SearchQuery" placeholder="Penalty ID, Member, or Book...">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label>Penalty Type</label>
+                                            <select name="Status" class="form-control" asp-items="Model.PenaltyTypesSelectList">
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>Sort By</label>
+                                            <div class="input-group">
+                                                <select name="SortBy" class="form-control">
+                                                    <option value="membername" class="pr-5" selected="@(Model.Filter.SortBy == "membername")">Member</option>
+                                                    <option value="booktitle" selected="@(Model.Filter.SortBy == "booktitle")">Book</option>
+                                                    <option value="borrowdate" selected="@(Model.Filter.SortBy == "borrowdate")">Borrow Date</option>
+                                                    <option value="duedate" selected="@(Model.Filter.SortBy == "duedate")">Due Date</option>
+                                                </select>
+                                                <select name="SortOrder" class="form-control">
+                                                    <option value="asc" class="mb-4" selected="@(Model.Filter.SortOrder == "asc")">Ascending</option>
+                                                    <option value="desc" selected="@(Model.Filter.SortOrder == "desc")">Descending</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label>Paid Status</label>
+                                            <select name="IsAvailable" class="form-control">
+                                                <option value="">All</option>
+                                                <option value="true" selected="@(Model.Filter.PaidStatus == true)">Paid</option>
+                                                <option value="false" selected="@(Model.Filter.PaidStatus == false)">Not Paid</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>Borrow Date From</label>
+                                            <input type="date" name="BorrowDateFrom" class="form-control"
+                                                   value="@(Model.Filter.BorrowDateFrom?.ToString("yyyy-MM-dd"))">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>Borrow Date To</label>
+                                            <input type="date" name="BorrowDateTo" class="form-control"
+                                                   value="@(Model.Filter.BorrowDateTo?.ToString("yyyy-MM-dd"))">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>Due Date From</label>
+                                            <input type="date" name="DueDateFrom" class="form-control"
+                                                   value="@(Model.Filter.DueDateFrom?.ToString("yyyy-MM-dd"))">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>Due Date To</label>
+                                            <input type="date" name="DueDateTo" class="form-control"
+                                                   value="@(Model.Filter.DueDateTo?.ToString("yyyy-MM-dd"))">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>Return Date To</label>
+                                            <input type="date" name="ReturnDateFrom" class="form-control"
+                                                   value="@(Model.Filter.ReturnDateFrom?.ToString("yyyy-MM-dd"))">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>Return Date To</label>
+                                            <input type="date" name="ReturnDateTo" class="form-control"
+                                                   value="@(Model.Filter.ReturnDateTo?.ToString("yyyy-MM-dd"))">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 d-flex mx-auto mt-3 justify-content-center">
+                                        <div class="my-auto mx-0">
+                                            <button type="submit" class="btn submit_button">
+                                                <i class="fas fa-magnifying-glass mr-1"></i>
+                                                Search
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row mt-3">
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="table-container mb-4">
+                            <table class="custom-table" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Type</th>
+                                        <th>Amount</th>
+                                        <th>Paid</th>
+                                        <th>Member</th>
+                                        <th>Book</th>
+                                        <th>BorrowDate</th>
+                                        <th>DueDate</th>
+                                        <th>ReturnDate</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model.Penalties)
+                                    {
+                                        <tr>
+                                            <td>@item.Id</td>
+                                            <td>@item.PenaltyType</td>
+                                            <td>$@item.PenaltyAmount</td>
+                                            <td class="text-center">
+                                                @if (item.PaidStatus)
+                                                {
+                                                    <i class="fas fa-circle-check text-success" title="Paid"></i>
+                                                }
+                                                else
+                                                {
+                                                    <i class="fas fa-circle-xmark text-danger" title="Not Paid"></i>
+                                                }
+                                            </td>
+                                            <td>@item.MemberName</td>
+                                            <td>@item.BookName</td>
+                                            <td>@item.BorrowDate.ToString("MM/dd/yyyy")</td>
+                                            <td>@item.DueDate.ToString("MM/dd/yyyy")</td>
+                                            <td>@item.ReturnDate?.ToString("MM/dd/yyyy")</td>
+                                            
+                                            <td class="d-flex align-content-center">
+                                                <div class="d-flex justify-content-center">
+                                                    <a asp-action="Edit" asp-route-id="@item.Id">
+                                                        <i class="fas fa-pen-to-square text-lg edit-button my-auto mr-4"></i>
+                                                    </a>
+                                                </div>
+                                                <div class="d-flex justify-content-center">
+                                                    <a asp-action="Delete" asp-route-id="@item.Id" class="text-danger text-lg ms-1" title="Delete"><i class="fas fa-trash"></i></a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <partial name="_PenaltiesPager" model="@Model.PagerSearchViewModel" />
+                    </div>
+                </div>
+
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <script>
+        window.onload = function () {
+            const alert = document.getElementById('successAlert');
+            if (alert) {
+                alert.classList.add('show');
+
+                setTimeout(() => {
+                    alert.classList.remove('show');
+                    alert.classList.add('fade');
+                }, 3000);
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const filterToggle = document.getElementById('filterToggle');
+            const filterSection = document.getElementById('filterSection');
+
+            // Store filter section state in session storage
+            const isFilterOpen = sessionStorage.getItem('isFilterOpen') === 'true';
+
+            // Only show filter section if explicitly opened by user
+            if (isFilterOpen) {
+                filterSection.classList.add('show');
+                filterToggle.classList.add('active');
+            }
+
+            filterToggle.addEventListener('click', function () {
+                const isNowOpen = filterSection.classList.toggle('show');
+                this.classList.toggle('active');
+                // Store the current state
+                sessionStorage.setItem('isFilterOpen', isNowOpen);
+            });
+
+            // Clear filter section state when applying new filters
+            const filterForm = document.querySelector('form[action="/Reservation/Index"]');
+            if (filterForm) {
+                filterForm.addEventListener('submit', function () {
+                    sessionStorage.setItem('isFilterOpen', 'true');
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

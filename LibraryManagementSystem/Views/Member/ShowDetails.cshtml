@@ -1,0 +1,104 @@
+﻿@model LibraryManagementSystem.Models.Member
+
+@{
+    ViewData["Title"] = "Book Details";
+}
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/css/site.css">
+
+    <style>
+        .bttn-presentation {
+            height: 45px;
+            width: 210px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .nav-pills .nav-link {
+            border-radius: 5px; 
+            background: linear-gradient(90deg, #007bff, #00aaff);
+            padding: 10px 20px;
+            transition: background-color 0.3s, color 0.3s;
+            color:white;
+            font-size: 17px;
+        }
+
+        .nav-pills .nav-link.active {
+            background-color: #007bff; 
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2); 
+        }
+
+        .nav-pills .nav-link:hover {
+            background-color: #0056b3; 
+            color: white;
+        }
+
+        .nav-pills .nav-link i {
+            margin-right: 10px; 
+        }
+
+        .card {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+    </style>
+
+</head>
+
+<div class="container mt-5">
+    <div class="text-center mb-4">
+        <h2 class="display-4 text-primary">📋 Member Details</h2>
+        <p class="text-muted">Find all the information about the selected Member at a glance</p>
+    </div>
+    <div class="card border-0 mb-5">
+        <div class="form-header">Member Overview</div>
+        <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+            <div class="card-body bg-light px-4 py-0 pt-4 mx-3">
+
+                <!-- Book Primary Details-->
+                <div class="row g-4">
+                    <partial name="~/Views/Member/_MemberDetails.cshtml" model="@Model" />
+                </div>
+            </div>
+            <!-- Navigation Tabs -->
+            <div class=" border-0 mt-1 mx-3">
+                <div class="card-body ">
+                    <ul class="nav nav-pills mb-3 d-flex justify-content-between" id="pills-tab" role="tablist">
+                        <li class="" role="presentation">
+                            <a class="bttn-primary bttn-presentation" id="borrowed-tab" asp-action="ShowBorrowed" asp-route-id="@Model?.Id">
+                                <i class="fas fa-book mr-2 text-white"></i>Borrowing History
+                            </a>
+                        </li>
+                        <li class="" role="presentation">
+                            <a class="bttn-primary bttn-presentation" id="penalties-tab" asp-action="ShowPenalties" asp-route-id="@Model?.Id">
+                                <i class="fas fa-exclamation-circle mr-2"></i>Penalty History
+                            </a>
+                        </li>
+                        <li class="" role="presentation">
+                            <a class="bttn-primary bttn-presentation" id="reservations-tab" asp-action="ShowReservations" asp-route-id="@Model?.Id">
+                                <i class="fas fa-clock mr-2"></i>Reservation History
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card-footer bg-light text-center">
+                <a class="bttn-primary mx-2 my-2" asp-action="Edit" asp-route-id="@Model?.Id">
+                    <i class="bi bi-pencil-square"></i> <p class="text-white p-0 m-0" style="font-size: 1rem">Edit</p>
+                </a>
+                <a class="bttn-danger mx-2 my-2 shadow border-0" asp-action="Delete" asp-route-id="@Model?.Id">
+                    <i class="bi bi-pencil-square"></i> <p class="text-white p-0 m-0" style="font-size: 1rem">Delete</p>
+                </a>
+                <a class="bttn-gray btn-sm mx-2 my-2" asp-action="Index">
+                    <i class="bi bi-arrow-left-circle"></i> <p class="text-white p-0 m-0" style="font-size: 1rem">Back to List</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

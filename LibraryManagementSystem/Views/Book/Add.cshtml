@@ -1,0 +1,47 @@
+﻿@model BookGenresViewModel
+
+@{
+    ViewData["Title"] = "Add a New Book";
+}
+
+<head>
+    <link rel="stylesheet" href="/css/site.css">
+
+    <style>
+        .bttn-primary, .bttn-gray {
+            height: 50px;
+            width: 180px;
+            text-decoration: none
+        }
+    </style>
+</head>
+
+<div class="container mt-5">
+    <div class="text-center mb-4">
+        <h2><i class="fas fa-book mr-2"></i> Add a New Book</h2>
+        <p>Fill out the details to add a new book to the library</p>
+    </div>
+
+    <div class="card form-card mx-auto mb-5" style="max-width: 800px;">
+        <div class="form-header">Book Details</div>
+        <div class="card-body bg-white px-4 py-4">
+            <form method="post" asp-action="SaveAdd" asp-controller="Book" novalidate>
+                <!-- Form Validation -->
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+
+                <!-- Book Form -->
+                <partial name="~/Views/Book/_BookForm.cshtml" model="@Model" />
+
+                <!-- Buttons -->
+                <div class="text-center mt-4 d-flex justify-content-center gap-2 flex-wrap">
+                    <button type="submit" class="bttn-primary">
+                        <i class="fas fa-save me-2"></i> Add Book
+                    </button>
+                    <button asp-action="Index" class="bttn-gray">
+                        <i class="fas fa-arrow-left me-2"></i> Back to List
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+﻿<div class="table-container mb-3">
+    <table class="custom-table" width="100%" cellspacing="0">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Joining Date</th>
+                <th>Expiration Date</th>
+                <th>Type</th>
+                <th>Borr. Count</th>
+                <th>Activity</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var member in Model.Members)
+            {
+                <tr onclick="location.href='@Url.Action("ShowDetails", new { id = member.Id })'" title="Details">
+                    <td>@member.Id.Split('-')[0]</td>
+                    <td>@member.FirstName @member.LastName</td>
+                    <td>@member.Email</td>
+                    <td>@member.PhoneNumber</td>
+                    <td>@member.DateOfMembership.ToString("MM/dd/yyyy")</td>
+                    <td>@member.ExpirationDate.ToString("MM/dd/yyyy")</td>
+                    <td>@member.MembershipType</td>
+                    <td>@member.TotalBorrowedBooks</td>
+                    <td class="text-center">
+                        @if (@member.IsActive)
+                        {
+                            <i class="fas fa-circle-check text-success text-lg" title="Available"></i>
+                        }
+                        else
+                        {
+                            <i class="fas fa-circle-xmark text-danger text-lg" title="Not Available"></i>
+                        }
+                    </td>
+                    <td class="align-content-center">
+                        <i asp-action="Edit" asp-route-id="@member.Id" class="fas fa-pen-to-square text-lg edit-button"></i>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

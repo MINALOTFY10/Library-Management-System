@@ -1,0 +1,93 @@
+﻿@model BooksPagerViewModel
+
+<form method="get" asp-action="Index" asp-controller="Book" class="mb-4">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="form-group">
+                <label>Search</label>
+                <input type="text" name="SearchQuery" class="form-control"
+                       value="@Model.Filter.SearchQuery" placeholder="Title, Author, or ISBN...">
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-group">
+                <label>Genre</label>
+                <select name="GenreId" class="form-control">
+                    <option value="0">All Genres</option>
+                    @foreach (var genre in Model.Genres)
+                    {
+                        <option value="@genre.Id" selected="@(genre.Id == Model.Filter.GenreId)">
+                            @genre.Name
+                        </option>
+                    }
+                </select>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-group">
+                <label>Language</label>
+                <select name="Language" class="form-control" asp-items="Model.LanguageSelectList">
+                </select>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-group">
+                <label>Publisher</label>
+                <select name="Publisher" class="form-control" asp-items="Model.PublisherSelectList">
+                </select>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-group">
+                <label>Availability</label>
+                <select name="IsAvailable" class="form-control">
+                    <option value="">All</option>
+                    <option value="true" selected="@(Model.Filter.IsAvailable == true)">Available</option>
+                    <option value="false" selected="@(Model.Filter.IsAvailable == false)">Not Available</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <label>Sort By</label>
+                <div class="input-group">
+                    <select name="SortBy" class="form-control">
+                        <option value="title" selected="@(Model.Filter.SortBy == "title")">Title</option>
+                        <option value="author" selected="@(Model.Filter.SortBy == "author")">Author</option>
+                        <option value="publisheddate" selected="@(Model.Filter.SortBy == "publisheddate")">Published Date</option>
+                        <option value="borrowcount" selected="@(Model.Filter.SortBy == "borrowcount")">Borrow Count</option>
+                        <option value="language" selected="@(Model.Filter.SortBy == "language")">Language</option>
+                    </select>
+                    <select name="SortOrder" class="form-control">
+                        <option value="asc" selected="@(Model.Filter.SortOrder == "asc")">Ascending</option>
+                        <option value="desc" selected="@(Model.Filter.SortOrder == "desc")">Descending</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <label>Published From</label>
+                <input type="date" name="PublishedFrom" class="form-control"
+                       value="@(Model.Filter.PublishedFrom?.ToString("yyyy-MM-dd"))">
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <label>Published To</label>
+                <input type="date" name="PublishedTo" class="form-control"
+                       value="@(Model.Filter.PublishedTo?.ToString("yyyy-MM-dd"))">
+            </div>
+        </div>
+        <div class="col-md-6 d-flex mx-auto mt-3 justify-content-center">
+            <div class="my-auto mx-0">
+                <button type="submit" class="btn submit_button">
+                    <i class="fas fa-magnifying-glass mr-1"></i>
+                    Search
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-3">
+    </div>
+</form>

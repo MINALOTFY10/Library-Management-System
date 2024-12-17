@@ -1,0 +1,130 @@
+﻿@model List<BorrowsCopy>
+
+@{
+    ViewData["Title"] = "Borrowed Books";
+}
+
+<head>
+    <link href="/css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/site.css">
+
+    <style>
+        table.custom-table tr,
+        table.custom-table tr:hover {
+            cursor: default !important;
+        }
+    </style>
+
+
+</head>
+
+<div class="container mt-5">
+    <div class="card border-0 mb-5">
+        <div class="form-header">📚 Borrowing History</div>
+        <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+            <div class="card-body bg-light px-0 py-0 pt-2 mx-3">
+                <!-- Books Table -->
+                @if (Model.Count > 0)
+                {
+                    <div class="table-responsive">
+                        <table class="custom-table" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th class="py-3">Book Title</th>
+                                    <th>Book ISBN</th>
+                                    <th>Copy ID</th>
+                                    <th>Borrow Date</th>
+                                    <th>Due Date</th>
+                                    <th>Return Date</th>
+                                    <th>Status</th>
+                                    <th>Penalty Amount</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    string status = "";
+                                    decimal penalty = 0;
+
+                                    if (item.ReturnDate != null)
+                                    {
+                                        if (item.ReturnDate <= item.DueDate)
+                                        {
+                                            status = "Returned";
+                                        }
+                                        else
+                                        {
+                                            status = "Returned Late";
+                                            penalty = ((DateTime)item.ReturnDate - item.DueDate).Days * 2;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        if (DateTime.Now > item.DueDate)
+                                        {
+                                            status = "Overdue";
+                                            penalty = (DateTime.Now - item.DueDate).Days * 2;
+                                        }
+                                        else
+                                        {
+                                            status = "Borrowed";
+                                        }
+                                    }
+
+                                    <tr>
+                                        <td>@item.BookCopy.Book.Title</td>
+                                        <td>@item.BookCopy.Book.ISBN</td>
+                                        <td>@item.BookCopy.Id</td>
+                                        <td>@item.BorrowDate.ToString("dd/MM/yyyy")</td>
+                                        <td>@item.DueDate.ToString("dd/MM/yyyy")</td>
+                                        <td>
+                                            @if (item.ReturnDate != null)
+                                            {
+                                                @item.ReturnDate?.ToString("dd/MM/yyyy")
+                                            }
+                                            else
+                                            {
+                                                <i class="fas fa-circle-xmark available-icon mx-auto text-center d-flex justify-content-center align-content-center" style="color: #da1010; font-size: 1.3rem;"></i>
+                                            }
+                                        </td>
+                                        <td>
+                                            @if (status == "Overdue")
+                                            {
+                                                <p class="text-danger font-weight-bold text-center mx-auto">Overdue</p>
+                                            }
+                                            else
+                                            {
+                                                @status
+                                            }
+                                        </td>
+                                        <td>
+                                            @if (penalty > 0)
+                                            {
+                                                @($"${penalty}")
+                                            }
+                                            else
+                                            {
+                                                <p>N/A</p>
+                                            }
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                }
+                else
+                {
+                    <p class="text-muted">No History available for this Member.</p>
+                }
+            </div>
+
+            <div class="card-footer bg-light text-center">
+                <a class="btn btn-secondary btn-sm mx-2 my-2 px-4 py-2 shadow-sm" asp-action="Index">
+                    <p class="font-weight-bold p-0 m-0 text-white" style="font-size: 1rem">Back to List</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,315 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = LibraryManagementSystem
+build_property.RootNamespace = LibraryManagementSystem
+build_property.ProjectDir = D:\Courses\.NET DEPI\07 - Projects\LibraryManagementSystem\LibraryManagementSystem\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\Courses\.NET DEPI\07 - Projects\LibraryManagementSystem\LibraryManagementSystem
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Areas/Identity/Pages/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Areas/Identity/Pages/Account/Logout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Areas/Identity/Pages/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Areas/Identity/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Areas/Identity/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/BookCopy/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va0NvcHlcQWRkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/BookCopy/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va0NvcHlcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/BookCopy/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va0NvcHlcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/Book/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xBZGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/Book/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/Book/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/Book/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/Book/ShowDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xTaG93RGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/Book/_BookCopies.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xfQm9va0NvcGllcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/Book/_BookDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xfQm9va0RldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/Book/_BookForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xfQm9va0Zvcm0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/Book/_BooksFilter.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xfQm9va3NGaWx0ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/Book/_BooksTable.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xfQm9va3NUYWJsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/BorrowsCopies/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9ycm93c0NvcGllc1xBZGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/BorrowsCopies/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9ycm93c0NvcGllc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/BorrowsCopies/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9ycm93c0NvcGllc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/BorrowsCopies/UserBorrowedBooks.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9ycm93c0NvcGllc1xVc2VyQm9ycm93ZWRCb29rcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/BorrowsCopies/_BorrowingTable.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9ycm93c0NvcGllc1xfQm9ycm93aW5nVGFibGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/BorrowsCopies/_FilterForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9ycm93c0NvcGllc1xfRmlsdGVyRm9ybS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/Dashboard/Charts/_AreaChart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXENoYXJ0c1xfQXJlYUNoYXJ0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/Dashboard/Charts/_BarChart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXENoYXJ0c1xfQmFyQ2hhcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/Dashboard/Charts/_PieChart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXENoYXJ0c1xfUGllQ2hhcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/Dashboard/Charts/_SameColorBarChart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXENoYXJ0c1xfU2FtZUNvbG9yQmFyQ2hhcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/Dashboard/_AdminDashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXF9BZG1pbkRhc2hib2FyZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/Dashboard/_ClientDashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXF9DbGllbnREYXNoYm9hcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/Dashboard/_GuestDashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXF9HdWVzdERhc2hib2FyZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/Dashboard/_SiteDescription.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXF9TaXRlRGVzY3JpcHRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/Member/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/Member/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/Member/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/Member/ShowBorrowed.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyXFNob3dCb3Jyb3dlZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/Member/ShowDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyXFNob3dEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/Member/ShowPenalties.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyXFNob3dQZW5hbHRpZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/Member/ShowReservations.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyXFNob3dSZXNlcnZhdGlvbnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/Member/_MemberDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyXF9NZW1iZXJEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/Member/_MemberForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyXF9NZW1iZXJGb3JtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/Member/_MembersFilter.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyXF9NZW1iZXJzRmlsdGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/Member/_MembersTable.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyXF9NZW1iZXJzVGFibGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/Member/_TablePartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyXF9UYWJsZVBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/Penalty/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVuYWx0eVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/Penalty/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVuYWx0eVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/Reservation/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXRpb25cRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/Reservation/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXRpb25cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/Reservation/ReservedBooks.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXRpb25cUmVzZXJ2ZWRCb29rcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/Reservation/_Filter.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXRpb25cX0ZpbHRlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/Reservation/_ReservationTable.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXRpb25cX1Jlc2VydmF0aW9uVGFibGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/Shared/NotFound.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXE5vdEZvdW5kLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/Shared/_BooksTablePartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Cb29rc1RhYmxlUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/Shared/_BorrowsCopiesPager.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Cb3Jyb3dzQ29waWVzUGFnZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/Shared/_FailedAlert.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9GYWlsZWRBbGVydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/Shared/_MainLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9NYWluTGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/Shared/_MembersPager.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9NZW1iZXJzUGFnZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/Shared/_Pager.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9QYWdlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/Shared/_PenaltiesPager.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9QZW5hbHRpZXNQYWdlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/Shared/_ReservationsPager.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9SZXNlcnZhdGlvbnNQYWdlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/Shared/_SuccessAlert.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9TdWNjZXNzQWxlcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/Shared/_UserBorrowedCopiesPager.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Vc2VyQm9ycm93ZWRDb3BpZXNQYWdlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Courses/.NET DEPI/07 - Projects/LibraryManagementSystem/LibraryManagementSystem/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-spbznog2vl

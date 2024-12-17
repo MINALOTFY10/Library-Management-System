@@ -1,0 +1,117 @@
+﻿@model Dictionary<string, int>
+
+@{
+    ViewData["Title"] = "Home Page";
+
+    var genreLabels = Model.Keys.ToArray();
+    var genreLabelsJson = System.Text.Json.JsonSerializer.Serialize(genreLabels);
+
+    var genreValues = Model.Values.ToArray();
+    var genreValuesJson = System.Text.Json.JsonSerializer.Serialize(genreValues);
+}
+
+<html lang="en">
+<head>
+    <!-- Custom styles for this template -->
+    <link href="/css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/site.css">
+
+    <!-- Example for Font Awesome v6 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .container-fluid {
+            padding-right: 10px !important;
+            padding-left: 10px !important;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Pie Chart -->
+    <div class="card shadow mb-4">
+        <!-- Card Header - Dropdown -->
+        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+            <h6 class="m-0 font-weight-bold text-primary">Genre Distribution</h6>
+        </div>
+        <!-- Card Body -->
+        <div class="card-body">
+            <canvas id="myPieChart"></canvas>
+        </div>
+        <div class="mb-3"></div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="~/vendor/jquery/jquery.min.js"></script>
+    <script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="~/js/sb-admin-2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        var genreLablesData = @Html.Raw(genreLabelsJson);
+        var genreValuesData = @Html.Raw(genreValuesJson);
+
+        // Improved Genre Distribution (Pie Chart)
+        var ctxPie = document.getElementById("myPieChart").getContext('2d');
+        var myPieChart = new Chart(ctxPie, {
+            type: 'doughnut',
+            data: {
+                labels: genreLablesData,
+                datasets: [{
+                    data: genreValuesData,
+                    backgroundColor: [
+                        '#4e73df', '#1cc88a', '#36b9cc', '#f6993f', '#e74a3b'
+                    ],
+                    hoverBackgroundColor: [
+                        '#3759c8', '#129f6b', '#2a8997', '#d47f38', '#c23930'
+                    ],
+                    hoverBorderColor: "rgba(234, 236, 244, 1)",
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            padding: 15,
+                            color: '#4e4e4e',
+                            font: {
+                                size: 12,
+                                family: 'Arial, sans-serif'
+                            }
+                        }
+                    },
+                    tooltip: {
+                        backgroundColor: "rgba(0, 0, 0, 0.8)",
+                        bodyColor: "#ffffff",
+                        titleColor: "#f8f9fc",
+                        borderColor: '#dddfeb',
+                        borderWidth: 1,
+                        displayColors: true,
+                        callbacks: {
+                            label: function (context) {
+                                let label = context.label || '';
+                                let value = context.raw || 0;
+                                return `${label}: ${value}`;
+                            }
+                        }
+                    }
+                },
+                cutout: '60%', // Reduced cutout to make the pie chart larger
+                animation: {
+                    animateScale: true,
+                    animateRotate: true
+                },
+                layout: {
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+
+

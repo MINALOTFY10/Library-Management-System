@@ -1,0 +1,76 @@
+﻿@model ReservationsPagerViewModel
+
+<form method="get" asp-action="Index" asp-controller="Reservation" class="mb-4">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="form-group">
+                <label>Search</label>
+                <input type="text" name="SearchQuery" class="form-control"
+                       value="@Model.Filter.SearchQuery" placeholder="Reservation ID, Member, or Book...">
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-group">
+                <label>Status</label>
+                <select name="Status" class="form-control" asp-items="Model.StatusSelectList">
+                </select>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <label>Sort By</label>
+                <div class="input-group">
+                    <select name="SortBy" class="form-control">
+                        <option value="membername" class="pr-5" selected="@(Model.Filter.SortBy == "membername")">Member</option>
+                        <option value="booktitle" selected="@(Model.Filter.SortBy == "booktitle")">Book</option>
+                        <option value="reservationdate" selected="@(Model.Filter.SortBy == "reservationdate")">Reservation Date</option>
+                        <option value="expirydate" selected="@(Model.Filter.SortBy == "expirydate")">Expiry Date</option>
+                    </select>
+                    <select name="SortOrder" class="form-control">
+                        <option value="asc" class="mb-4" selected="@(Model.Filter.SortOrder == "asc")">Ascending</option>
+                        <option value="desc" selected="@(Model.Filter.SortOrder == "desc")">Descending</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <label>Reservation Date From</label>
+                <input type="date" name="ReservationDateFrom" class="form-control"
+                       value="@(Model.Filter.ReservationDateFrom?.ToString("yyyy-MM-dd"))">
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <label>Reservation Date To</label>
+                <input type="date" name="ReservationDateTo" class="form-control"
+                       value="@(Model.Filter.ReservationDateTo?.ToString("yyyy-MM-dd"))">
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <label>Expiration Date From</label>
+                <input type="date" name="ExpirationDateFrom" class="form-control"
+                       value="@(Model.Filter.ExpirationDateFrom?.ToString("yyyy-MM-dd"))">
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <label>Expiration Date To</label>
+                <input type="date" name="ExpirationDateTo" class="form-control"
+                       value="@(Model.Filter.ExpirationDateTo?.ToString("yyyy-MM-dd"))">
+            </div>
+        </div>
+        <div class="col-md-6 d-flex mx-auto mt-3 justify-content-center">
+            <div class="my-auto mx-0">
+                <button type="submit" class="btn submit_button">
+                    <i class="fas fa-magnifying-glass mr-1"></i>
+                    Search
+                </button>
+            </div>
+        </div>
+
+    </div>
+    <div class="row mt-3">
+    </div>
+</form>

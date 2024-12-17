@@ -1,0 +1,108 @@
+﻿@model Book
+
+<!-- Book Copies -->
+<div class="mt-4">
+    <div class="d-flex mb-2">
+        <h3 class="text-primary font-weight-bold">Book Copies</h3>
+
+        <a asp-controller="BookCopy" asp-route-id="@Model.Id" asp-action="Add"
+           class="bttn-primary rounded ml-auto">
+            <i class="fas fa-circle-plus mr-1"></i>
+            Add Copy
+        </a>
+    </div>
+
+    @if (Model.BookCopies != null && Model.BookCopies.Count > 0)
+    {
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Copy No.</th>
+                        <th>Availability</th>
+                        <th>Condition</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var copy in Model.BookCopies)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => copy.Number)
+                            </td>
+
+                            <td>
+                                @if (copy.IsAvailable)
+                                {
+                                    <i class="fas fa-circle-check available-icon"></i>
+                                }
+                                else
+                                {
+                                    <i class="fas fa-circle-xmark available-icon"></i>
+                                }
+                            </td>
+
+                            <td>
+                                <p class="condition-text">
+                                    @copy.ConditionStatus
+                                </p>
+                            </td>
+                            <td>
+                                @if (!copy.IsAvailable)
+                                {
+                                    <div class="d-flex align-items-center flex-column">
+                                        <span class="status-badge me-2">Borrowed</span>
+                                        <div class="d-flex align-items-center mt-2">
+                                            <i class="fas fa-user mr-2" style="color: #f76b56;"></i>
+                                            <span class="user-name ms-2">
+                                                <span>@copy.BorrowsCopies.FirstOrDefault(b => b.ReturnDate == null)?.Member.FirstName</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="d-flex align-items-center flex-column">
+                                        <span class="status-badge me-2">In-Shelf</span>
+                                        <div class="d-flex align-items-center mt-2">
+                                            <i class="fa-solid fa-location-dot mr-2" style="color: #f76b56;"></i>
+                                            <span class="user-name ms-2">@copy.Location</span>
+                                        </div>
+                                    </div>
+                                }
+                            </td>
+                            <td class="align-content-center">
+                                <div class="d-flex justify-content-center align-content-between">
+                                    <a asp-controller="BookCopy" asp-action="Edit" asp-route-id="@copy.Id" class="bttn-primary mr-1">
+                                        <i class="fas fa-pen-to-square"></i>
+                                    </a>
+                                    @if (copy.IsAvailable)
+                                    {
+                                        <a asp-controller="BookCopy" asp-action="Delete" asp-route-id="@copy.Id" class="bttn-danger ml-1">
+                                            <i class="fas fa-trash"></i>
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <a asp-controller="BookCopy" asp-action="Delete" asp-route-id="@copy.Id"
+                                           class="bttn-danger ml-1 disabled" tabindex="-1" aria-disabled="true">
+                                            <i class="fas fa-trash"></i>
+                                        </a>
+                                    }
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+    }
+    else
+    {
+        <p class="text-muted">No copies available for this book.</p>
+    }
+</div>
