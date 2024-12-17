@@ -156,5 +156,3 @@ Follow these steps to set up the project locally:
    - Press **F5** or click **Start** to run the application.
 
 6. The application will be available at `http://localhost:port`.
-
----
