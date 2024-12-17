@@ -19,7 +19,11 @@ This system is built with the goal of simplifying library operations, enhancing 
 
 ## Overview
 
-This system is built with **ASP.NET Core MVC**, **Entity Framework Core**, and **ASP.NET Identity**. The project is built using a Code-First approach, incorporating best practices like the Repository Pattern and Dependency Injection for a clean and maintainable architecture.
+This system is built using **ASP.NET Core MVC**, **Entity Framework Core**, and **ASP.NET Identity**. It follows a Code-First approach, allowing the database schema to evolve easily through migrations.
+
+The system employs the Repository Pattern to abstract data access, ensuring a clean separation of concerns and maintainable code. Dependency Injection is used to manage dependencies, promoting loose coupling and enhancing testability.
+
+ASP.NET Identity handles user authentication and authorization, ensuring secure login and role-based access for librarians and members. This architecture ensures a scalable, secure, and maintainable solution for managing library operations.
 
 ---
 
