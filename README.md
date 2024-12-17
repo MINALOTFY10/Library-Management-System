@@ -15,7 +15,6 @@ This system is built with the goal of simplifying library operations, enhancing 
 - [System Design](#system-design)
 - [Installation Instructions](#installation-instructions)
 
----
 
 ## Overview
 
@@ -25,7 +24,6 @@ The system employs the Repository Pattern to abstract data access, ensuring a cl
 
 ASP.NET Identity handles user authentication and authorization, ensuring secure login and role-based access for librarians and members. This architecture ensures a scalable, secure, and maintainable solution for managing library operations.
 
----
 
 ## Project Features
 
@@ -100,7 +98,6 @@ The system uses a **single login page** to determine the user role based on cred
 - **Librarian Login**: Redirects to the librarian's dashboard with full access to management features.
 - **Member Login**: Redirects to a member dashboard with limited access.
 
----
 
 ## Technologies Used
 
@@ -110,7 +107,6 @@ The system uses a **single login page** to determine the user role based on cred
 - **Authentication**: ASP.NET Identity
 - **Styling**: Bootstrap
 
----
 
 ## System Design
 The system follows the **Model-View-Controller (MVC)** architecture:
@@ -118,7 +114,6 @@ The system follows the **Model-View-Controller (MVC)** architecture:
 - **View:** Handles the presentation layer (HTML, CSS).
 - **Controller:** Manages request handling and business logic.
 
----
 
 ## Installation Instructions
 
