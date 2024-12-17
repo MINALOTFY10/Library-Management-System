@@ -15,7 +15,6 @@ This system is built with the goal of simplifying library operations, enhancing 
 - [System Design](#system-design)
 - [Installation Instructions](#installation-instructions)
 
----
 
 ## Overview
 
