@@ -1,7 +1,5 @@
 # Library Management System
 
-## Overview
-
 The **Library Management System** is designed to help libraries efficiently manage book checkouts, returns, and penalties for late returns. The system provides different functionalities for librarians and members, allowing librarians to manage books, members, and reservations, while members can browse available books, view their borrowing history, and manage their account.
 
 This system is built with the goal of simplifying library operations, enhancing user experience, and ensuring smooth book tracking and management.
