@@ -8,12 +8,12 @@ This system is built with the goal of simplifying library operations, enhancing 
 
 ## Table of Contents
 
-1. [Project Overview](#project-overview)
-2. [Demo Video](#demo-video)
-3. [Project Features](#project-features)
-4. [Technologies Used](#technologies-used)
-5. [System Design](#system-design)
-6. [Installation Instructions](#installation-instructions)
+- [Project Overview](#project-overview)
+- [Demo Video](#demo-video)
+- [Project Features](#project-features)
+- [Technologies Used](#technologies-used)
+- [System Design](#system-design)
+- [Installation Instructions](#installation-instructions)
 
 ---
 
@@ -51,8 +51,6 @@ This system is built with **ASP.NET Core MVC**, **Entity Framework Core**, and *
   - View available books with details like title, author, genre, and availability.
   - Search and filter books by category.
 
----
-
 ### 2. Tabs for Librarian
 
 These tabs are visible to librarians after they log in:
@@ -79,8 +77,6 @@ These tabs are visible to librarians after they log in:
   - Monthly borrowing trends.
   - Overdue books.
 
----
-
 ### 3. Tabs for Member
 
 These tabs are visible to members after they log in:
@@ -97,8 +93,6 @@ These tabs are visible to members after they log in:
 
 #### **Library Rules**
 - View library rules and guidelines for borrowing, returning, and reservations.
-
----
 
 ### 4. Login Behavior
 
